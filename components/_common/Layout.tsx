@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../../styles/globalStyles';
-import { myTheme } from '../../styles/my-theme';
+import { GlobalStyle, myTheme } from '../../styles/';
+import { Nav } from '../nav/Nav';
+import { Container } from './Container';
 
 const LayoutRoot = styled.div`
   min-height: 100vh;
@@ -11,7 +12,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <ThemeProvider theme={myTheme}>
       <LayoutRoot>
         <GlobalStyle />
-        <main>{children}</main>
+        <Container>
+          <Nav />
+          <main>{children}</main>
+        </Container>
       </LayoutRoot>
     </ThemeProvider>
   );

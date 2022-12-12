@@ -106,20 +106,6 @@ const bodyStyles = css`
     text-decoration: none;
     letter-spacing: 0.5px;
   }
-
-  .container {
-    width: 90%;
-    margin: auto;
-
-    @media screen and (min-width: ${breakpoints.tablet}) {
-      width: 90%;
-    }
-
-    @media screen and (min-width: ${breakpoints.desktop}) {
-      width: 65%;
-      max-width: 800px;
-    }
-  }
 `;
 
 const GlobalStyle = createGlobalStyle`
