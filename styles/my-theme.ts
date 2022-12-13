@@ -17,7 +17,7 @@ const myTheme: DefaultTheme = {
       gray50: '#333333',
       gray30: '#3C3C3C',
       gray10: '#9C9C9C',
-      lightGray: '#9C9C9C',
+      lightGray: '#D9D9D9',
       white: '#FFFFFF',
     },
   },

@@ -7,23 +7,23 @@ interface ButtonProps {
 }
 
 const ButtonRoot = styled.button<ButtonProps>`
-  font-size: 1rem;
-  cursor: pointer;
   border: none;
   padding: ${(props) => (props.variant === 'nav' ? 'none' : '1rem 2rem')};
   background-color: ${(props) =>
     props.variant === 'nav'
       ? 'transparent'
+      : props.variant === 'button-alt'
+      ? props.theme.colors.grayScale.white
       : props.theme.colors.main.primary100};
   color: ${(props) =>
-    props.variant === 'nav'
-      ? props.theme.colors.grayScale.black
-      : props.theme.colors.grayScale.white};
+    props.variant === 'button'
+      ? props.theme.colors.grayScale.white
+      : props.theme.colors.grayScale.black};
   transition: ${misc.transition};
 
   &:hover {
     opacity: 0.85;
-    transition: ${misc.transition};
+    transition: ${misc.transition.ease};
   }
 `;
 

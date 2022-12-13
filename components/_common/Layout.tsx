@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, myTheme } from '../../styles/';
+import { Footer } from '../footer/Footer';
 import { Nav } from '../nav/Nav';
 import { Container } from './Container';
 
@@ -12,10 +13,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <ThemeProvider theme={myTheme}>
       <LayoutRoot>
         <GlobalStyle />
+        <Nav />
         <Container>
-          <Nav />
           <main>{children}</main>
         </Container>
+        <Footer />
       </LayoutRoot>
     </ThemeProvider>
   );

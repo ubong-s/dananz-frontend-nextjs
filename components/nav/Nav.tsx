@@ -2,15 +2,14 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
 import { breakpoints, misc } from '../../styles';
+import { Container } from '../_common';
 import { Logo } from '../_common/Logo';
 import { NavLink } from './NavLink';
 import { NavToggle } from './NavToggle';
 
 const NavRoot = styled.header`
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   padding: 20px 0;
   background-color: ${(props) => props.theme.colors.grayScale.white};
 
@@ -19,14 +18,21 @@ const NavRoot = styled.header`
   }
 `;
 
+const NavInner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const NavLinks = styled.nav`
   position: absolute;
+  left: 0;
   top: 100%;
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.colors.grayScale.white};
   gap: 2rem;
-  padding: 20px 0;
+  padding: 20px 5%;
   width: 100%;
   z-index: 999;
   opacity: 0;
@@ -36,11 +42,13 @@ const NavLinks = styled.nav`
   &.active {
     opacity: 1;
     transform: translateY(0);
-    transition: ${misc.transition};
+    transition: ${misc.transition.ease};
   }
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     display: flex;
+    gap: 4.25rem;
+    left: unset;
     top: unset;
     position: relative;
     flex-direction: row;
@@ -72,20 +80,24 @@ export const Nav: React.FC = () => {
 
   return (
     <NavRoot>
-      <Logo />
-      <NavLinks className={navOpen ? 'active' : ''}>
-        {links.map((link) => (
-          <NavLink
-            key={link.display}
-            href={`/${link.route}`}
-            variant={link.route === routes.contactUs ? 'button' : 'nav'}
-            closeNav={closeNav}
-          >
-            {link.display}
-          </NavLink>
-        ))}
-      </NavLinks>
-      <NavToggle navOpen={navOpen} toggleNav={toggleNav} />
+      <Container>
+        <NavInner>
+          <Logo />
+          <NavLinks className={navOpen ? 'active' : ''}>
+            {links.map((link) => (
+              <NavLink
+                key={link.display}
+                href={`/${link.route}`}
+                variant={link.route === routes.contactUs ? 'button' : 'nav'}
+                closeNav={closeNav}
+              >
+                {link.display}
+              </NavLink>
+            ))}
+          </NavLinks>
+          <NavToggle navOpen={navOpen} toggleNav={toggleNav} />
+        </NavInner>
+      </Container>
     </NavRoot>
   );
 };

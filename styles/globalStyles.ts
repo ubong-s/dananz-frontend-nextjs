@@ -35,7 +35,7 @@ const breakpoints = {
 
 const bodyStyles = css`
   font-family: ${typography.type.primary};
-  font-size: 1rem;
+  font-size: 14px;
   background-color: ${(props) => props.theme.colors.grayScale.white};
   color: ${(props) => props.theme.colors.grayScale.gray10};
   line-height: 1.6;
@@ -60,6 +60,14 @@ const bodyStyles = css`
     /* outline: 1px solid slategrey; */
   }
 
+  @media screen and (min-width: ${breakpoints.tablet}) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 18px;
+  }
+
   *,
   ::after,
   ::before {
@@ -70,28 +78,37 @@ const bodyStyles = css`
   }
 
   main {
-    min-height: 80vh;
+    min-height: 100vh;
   }
 
-  h1,
+  h1 {
+    font-weight: ${typography.weight.bold};
+    letter-spacing: 0.5px;
+    line-height: 60px;
+    color: ${(props) => props.theme.colors.main.primary100};
+
+    @media screen and (min-width: ${breakpoints.desktop}) {
+      line-height: 100px;
+    }
+  }
+
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-weight: ${typography.weight.bold};
+    font-weight: ${typography.weight.semibold};
+    line-height: 40px;
     letter-spacing: 0.5px;
-    line-height: 1;
     color: ${(props) => props.theme.colors.main.primary100};
+
+    @media screen and (min-width: ${breakpoints.desktop}) {
+      line-height: 60px;
+    }
   }
 
   p {
-    font-size: 1rem;
     margin-bottom: 1rem;
-
-    @media screen and (min-width: ${breakpoints.tablet}) {
-      font-size: 1rem;
-    }
   }
 
   img {
@@ -105,6 +122,24 @@ const bodyStyles = css`
   a {
     text-decoration: none;
     letter-spacing: 0.5px;
+  }
+
+  input {
+    font-size: 14px;
+    outline: none;
+
+    @media screen and (min-width: ${breakpoints.tablet}) {
+      font-size: 16px;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 13px;
+
+    @media screen and (min-width: ${breakpoints.tablet}) {
+      font-size: 14px;
+    }
   }
 `;
 
