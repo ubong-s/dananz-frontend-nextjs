@@ -11,6 +11,7 @@ const misc = {
   transition: {
     ease: 'all 0.3s ease-in-out',
   },
+  shadow: '10px 10px 40px rgba(0, 0, 0, 0.05)',
 };
 
 const typography = {

@@ -7,6 +7,7 @@ const HeroRoot = styled.div`
 
   img {
     height: 300px;
+    object-fit: cover;
   }
 
   @media screen and (min-width: ${breakpoints.tablet}) {
