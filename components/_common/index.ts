@@ -3,5 +3,6 @@ import { Container } from './Container';
 import { Layout } from './Layout';
 import { Logo } from './Logo';
 import { SectionHeading } from './SectionHeading';
+import { Stats } from './Stats';
 
-export { Button, Container, Layout, Logo, SectionHeading };
+export { Button, Container, Layout, Logo, SectionHeading, Stats };
