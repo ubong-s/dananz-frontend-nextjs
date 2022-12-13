@@ -108,7 +108,16 @@ const bodyStyles = css`
   }
 
   p {
+    font-size: 14px;
     margin-bottom: 1rem;
+
+    @media screen and (min-width: ${breakpoints.tablet}) {
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: ${breakpoints.desktop}) {
+      font-size: 18px;
+    }
   }
 
   img {
