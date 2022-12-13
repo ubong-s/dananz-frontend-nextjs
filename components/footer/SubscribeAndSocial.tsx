@@ -7,6 +7,10 @@ const SubscribeAndSocialRoot = styled.div`
   display: grid;
   gap: 2rem;
 
+  h2 {
+    max-width: 480px;
+  }
+
   @media screen and (min-width: ${breakpoints.desktop}) {
     grid-template-columns: 1.5fr 1fr;
     gap: 5rem;

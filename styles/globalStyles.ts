@@ -9,7 +9,8 @@ const misc = {
     full: '999px',
   },
   transition: {
-    ease: 'all 0.3s ease-in-out',
+    ease: 'all 0.5s ease-in-out',
+    linear: 'all 0.5s linear',
   },
   shadow: '10px 10px 40px rgba(0, 0, 0, 0.05)',
 };

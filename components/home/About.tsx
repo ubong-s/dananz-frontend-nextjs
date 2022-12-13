@@ -43,7 +43,7 @@ const AboutBottom = styled.div`
   }
 
   @media screen and (min-width: ${breakpoints.large}) {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 880px auto;
   }
 `;
 
