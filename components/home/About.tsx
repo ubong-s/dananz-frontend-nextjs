@@ -18,17 +18,8 @@ const AboutTop = styled.div`
   gap: 1rem;
   margin-bottom: 32px;
 
-  h3 {
-    font-size: 25px;
-    color: ${(props) => props.theme.colors.grayScale.gray50};
-  }
-
   @media screen and (min-width: ${breakpoints.desktop}) {
     padding-bottom: 60px;
-
-    h3 {
-      font-size: 36px;
-    }
   }
 `;
 

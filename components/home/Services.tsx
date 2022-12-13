@@ -20,8 +20,6 @@ const ServicesTop = styled.div`
   z-index: 1;
 
   h3 {
-    font-size: 25px;
-    color: ${(props) => props.theme.colors.grayScale.gray50};
     margin: 24px 0;
   }
 
@@ -34,10 +32,6 @@ const ServicesTop = styled.div`
   }
 
   @media screen and (min-width: ${breakpoints.desktop}) {
-    h3 {
-      font-size: 36px;
-    }
-
     .services {
       padding: 1.5rem 2.5rem 1.5rem 0;
     }

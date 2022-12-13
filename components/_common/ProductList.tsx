@@ -14,18 +14,12 @@ const ProductListRoot = styled.section`
 const ProductListTop = styled.div`
   margin: 1.5rem 0 3rem;
 
-  h3 {
-    font-size: 22px;
-    color: ${(props) => props.theme.colors.grayScale.black};
-  }
-
   @media screen and (min-width: ${breakpoints.desktop}) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
     h3 {
-      font-size: 36px;
       max-width: 337px;
     }
 

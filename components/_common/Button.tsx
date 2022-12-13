@@ -7,7 +7,10 @@ interface ButtonProps {
 }
 
 const ButtonRoot = styled.button<ButtonProps>`
-  border: none;
+  border: ${(props) =>
+    props.variant === 'button-alt'
+      ? `1px solid ${props.theme.colors.grayScale.black}`
+      : 'none'};
   padding: ${(props) => (props.variant === 'nav' ? 'none' : '1rem 2rem')};
   background-color: ${(props) =>
     props.variant === 'nav'

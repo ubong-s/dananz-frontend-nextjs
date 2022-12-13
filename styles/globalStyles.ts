@@ -102,10 +102,19 @@ const bodyStyles = css`
     font-weight: ${typography.weight.semibold};
     line-height: 40px;
     letter-spacing: 0.5px;
-    color: ${(props) => props.theme.colors.main.primary100};
+    color: ${(props) => props.theme.colors.grayScale.gray50};
 
     @media screen and (min-width: ${breakpoints.desktop}) {
       line-height: 60px;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: ${breakpoints.desktop}) {
+      font-size: 36px;
     }
   }
 

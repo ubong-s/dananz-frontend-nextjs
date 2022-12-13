@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { typography } from '../../styles';
+import { breakpoints } from '../../styles/globalStyles';
 
 interface SectionHeadingProps {
   title: string;
@@ -10,7 +11,7 @@ const SectionHeadingRoot = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  max-width: 600px;
+  width: 100%;
 
   h2 {
     text-transform: uppercase;
@@ -24,6 +25,10 @@ const SectionHeadingRoot = styled.div`
     height: 2px;
     background-color: ${(props) => props.theme.colors.grayScale.black};
     width: 100%;
+  }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    max-width: 600px;
   }
 `;
 
