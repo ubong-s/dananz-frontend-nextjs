@@ -4,6 +4,7 @@ import { breakpoints } from '../../styles';
 import { SectionHeading } from '../_common';
 import Image from 'next/image';
 import { Service } from './Service';
+import { services } from '../../lib/services';
 
 const ServicesRoot = styled.section`
   padding: 50px 0;
@@ -65,21 +66,6 @@ export const Services = (): React.ReactElement => {
       setActiveIndex(index);
     }
   };
-
-  const services = [
-    {
-      title: 'Interior Design',
-      text: 'Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.',
-    },
-    {
-      title: 'Construction',
-      text: 'Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.',
-    },
-    {
-      title: 'Construction Consultant',
-      text: 'Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.',
-    },
-  ];
 
   return (
     <ServicesRoot>

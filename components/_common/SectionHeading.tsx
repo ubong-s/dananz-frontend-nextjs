@@ -8,7 +8,8 @@ interface SectionHeadingProps {
 }
 
 const SectionHeadingRoot = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 1rem;
   width: 100%;

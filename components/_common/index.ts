@@ -6,8 +6,10 @@ import { PageHeader } from './PageHeader';
 import { ProductList } from './ProductList';
 import { SectionHeading } from './SectionHeading';
 import { Stats } from './Stats';
+import { WhyChooseUs } from './WhyChooseUs';
 
 export {
+  WhyChooseUs,
   Button,
   Container,
   Layout,

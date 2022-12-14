@@ -1,6 +1,5 @@
 import { Achievement } from '../../components/about/Achievement';
-import { WhyChooseUs } from '../../components/about/WhyChooseUs';
-import { PageHeader } from '../../components/_common';
+import { PageHeader, WhyChooseUs } from '../../components/_common';
 
 export default function AboutUsPage() {
   return (

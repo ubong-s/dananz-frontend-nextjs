@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { breakpoints, misc } from '../../styles';
-import { SectionHeading } from '../_common';
+import { SectionHeading } from '.';
 
 const WhyChooseUsRoot = styled.section`
   padding: 25px 0 50px;
