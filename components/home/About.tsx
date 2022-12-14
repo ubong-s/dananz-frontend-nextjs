@@ -13,16 +13,6 @@ const AboutRoot = styled.section`
   }
 `;
 
-const AboutTop = styled.div`
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 32px;
-
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding-bottom: 60px;
-  }
-`;
-
 const AboutBottom = styled.div`
   display: grid;
   gap: 1rem;
@@ -101,13 +91,11 @@ const AboutContent = styled.div`
 export const About = (): React.ReactElement => {
   return (
     <AboutRoot>
-      <AboutTop>
-        <SectionHeading title='About' />
-        <h3>
-          “{"We're"} one of the best furniture agency. Prioritizing customers
-          and making purchases easy are the hallmarks of our agency.”
-        </h3>
-      </AboutTop>
+      <SectionHeading
+        title='About'
+        subtitle={`“We're one of the best furniture agency. Prioritizing customers and making purchases easy are the hallmarks of our agency.”`}
+      />
+
       <AboutBottom>
         <AboutImage>
           <Image

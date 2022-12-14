@@ -10,12 +10,6 @@ const AchievementRoot = styled.section`
     padding: 80px 0;
   }
 `;
-const AchievementTop = styled.div`
-  h3 {
-    max-width: 740px;
-    margin: 1rem 0 2rem;
-  }
-`;
 
 const AchievementBottom = styled.div`
   display: grid;
@@ -40,13 +34,12 @@ const AchievementBottom = styled.div`
 export const Achievement = () => {
   return (
     <AchievementRoot>
-      <AchievementTop>
-        <SectionHeading title='Achievement' />
-        <h3>
-          interior customization with Danaanz, best quality with professional
-          workers
-        </h3>
-      </AchievementTop>
+      <SectionHeading
+        title='Achievement'
+        subtitle='Interior customization with Danaanz, best quality with professional
+          workers'
+        subtitleType='half'
+      />
       <AchievementBottom>
         <Image
           src='/assets/achievement_img.png'

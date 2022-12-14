@@ -11,24 +11,6 @@ const ProductListRoot = styled.section`
   }
 `;
 
-const ProductListTop = styled.div`
-  margin: 1.5rem 0 3rem;
-
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    h3 {
-      max-width: 337px;
-    }
-
-    p {
-      max-width: 475px;
-    }
-  }
-`;
-
 const ProductListBottom = styled.div`
   display: grid;
   gap: 45px;
@@ -64,14 +46,13 @@ export const ProductList = (): React.ReactElement => {
 
   return (
     <ProductListRoot>
-      <SectionHeading title='Product' />
-      <ProductListTop>
-        <h3>Choose your product themes.</h3>
-        <p>
-          Find the theme you want. If our choice of theme is not what you want,
-          you can customize it as you want.
-        </p>
-      </ProductListTop>
+      <SectionHeading
+        title='Product'
+        subtitle='Choose your product themes.'
+        subtitleDesc='Find the theme you want. If our choice of theme is not what you want,
+          you can customize it as you want.'
+        subtitleType='grid'
+      />
       <ProductListBottom>
         {productThemes.map((product) => (
           <Product key={product.id} product={product} />

@@ -20,14 +20,6 @@ const ServicesTop = styled.div`
   background-color: ${(props) => props.theme.colors.grayScale.white};
   z-index: 1;
 
-  h3 {
-    margin: 24px 0;
-  }
-
-  p {
-    max-width: 470px;
-  }
-
   .services {
     padding: 1rem 0;
   }
@@ -70,13 +62,15 @@ export const Services = (): React.ReactElement => {
   return (
     <ServicesRoot>
       <ServicesTop>
-        <SectionHeading title='Services' />
-        <h3>Attractive furniture with the best quality.</h3>
-        <p>
-          Customize your interior design into a dream place with the best
+        <SectionHeading
+          title='Services'
+          subtitle='Attractive furniture with the best quality.'
+          subtitleDesc=' Customize your interior design into a dream place with the best
           designers and quality furniture. We try our best to fulfill your
-          expectations.
-        </p>
+          expectations.'
+          subtitleType='half'
+        />
+
         <div className='services'>
           {services.map((service, index) => {
             return (

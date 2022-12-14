@@ -11,16 +11,6 @@ const WhyChooseUsRoot = styled.section`
   }
 `;
 
-const WhyChooseUsTop = styled.div`
-  h3 {
-    margin-top: 1rem;
-  }
-
-  p {
-    max-width: 470px;
-  }
-`;
-
 const WhyChooseUsGrid = styled.div`
   display: grid;
   gap: 1rem;
@@ -71,15 +61,14 @@ export const WhyChooseUs = () => {
 
   return (
     <WhyChooseUsRoot>
-      <WhyChooseUsTop>
-        <SectionHeading title='Service' />
-        <h3>Why Choose Us</h3>
-        <p>
-          Customize your interior design into a dream place with the best
+      <SectionHeading
+        title='Service'
+        subtitle='Why Choose Us'
+        subtitleDesc='Customize your interior design into a dream place with the best
           designers and quality furniture. We try our best to fulfill your
-          expectations.
-        </p>
-      </WhyChooseUsTop>
+          expectations.'
+        subtitleType='half'
+      />
       <WhyChooseUsGrid>
         {whyList.map((item) => (
           <WhyChooseUsGridItem key={item.id}>
