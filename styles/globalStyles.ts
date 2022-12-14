@@ -13,6 +13,7 @@ const misc = {
     linear: 'all 0.5s linear',
   },
   shadow: '10px 10px 40px rgba(0, 0, 0, 0.05)',
+  shadowAlt: ' 0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
 };
 
 const typography = {

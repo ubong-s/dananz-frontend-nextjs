@@ -1,3 +1,5 @@
+import { Achievement } from '../../components/about/Achievement';
+import { WhyChooseUs } from '../../components/about/WhyChooseUs';
 import { PageHeader } from '../../components/_common';
 
 export default function AboutUsPage() {
@@ -8,6 +10,8 @@ export default function AboutUsPage() {
         description='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
         imageURL='/assets/about-header.png'
       />
+      <Achievement />
+      <WhyChooseUs />
     </>
   );
 }
