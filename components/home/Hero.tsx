@@ -24,7 +24,7 @@ const HeroTop = styled.div`
   padding-bottom: 30px;
 
   h1 {
-    font-size: 36px;
+    font-size: 40px;
     color: ${(props) => props.theme.colors.grayScale.gray50};
 
     margin-bottom: 1rem;

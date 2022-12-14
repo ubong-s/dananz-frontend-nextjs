@@ -102,9 +102,9 @@ export const Service: React.FC<ServiceProps> = ({
                   ? myTheme.colors.main.primary100
                   : myTheme.colors.grayScale.black
               }
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
             <path
               d='M16 6.66667L25.3333 16L16 25.3333'
@@ -113,9 +113,9 @@ export const Service: React.FC<ServiceProps> = ({
                   ? myTheme.colors.main.primary100
                   : myTheme.colors.grayScale.black
               }
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
           </svg>
         </button>
