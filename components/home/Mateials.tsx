@@ -4,7 +4,7 @@ import { Button, SectionHeading } from '../_common';
 import Image from 'next/image';
 
 const MaterialsRoot = styled.section`
-  padding: 50px 0 8px;
+  padding: 50px 0 80px;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     padding: 75px 0 125px;

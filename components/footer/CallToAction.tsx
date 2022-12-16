@@ -15,6 +15,7 @@ const CTARoot = styled.div`
 
 const CTAInner = styled.div`
   display: grid;
+
   gap: 1.5rem;
 
   h2 {
@@ -23,10 +24,12 @@ const CTAInner = styled.div`
 
   p {
     color: ${(props) => props.theme.colors.grayScale.lightGray};
+    margin-bottom: 2rem;
   }
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     grid-template-columns: 1.5fr 1fr;
+    align-items: flex-start;
     gap: 5rem;
 
     h2 {
@@ -35,7 +38,6 @@ const CTAInner = styled.div`
 
     p {
       font-size: 18px;
-      margin-bottom: 1.5rem;
     }
   }
 `;

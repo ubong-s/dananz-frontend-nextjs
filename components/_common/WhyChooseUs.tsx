@@ -4,10 +4,10 @@ import { breakpoints, misc } from '../../styles';
 import { SectionHeading } from '.';
 
 const WhyChooseUsRoot = styled.section`
-  padding: 25px 0 50px;
+  padding: 50px 0;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 40px 0 90px;
+    padding: 90px 0;
   }
 `;
 
