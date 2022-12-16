@@ -6,12 +6,12 @@ interface ButtonProps {
   children?: React.ReactElement | string;
 }
 
-const ButtonRoot = styled.button<ButtonProps>`
+export const ButtonRoot = styled.button<ButtonProps>`
   border: ${(props) =>
     props.variant === 'button-alt'
       ? `1px solid ${props.theme.colors.grayScale.black}`
       : 'none'};
-  padding: ${(props) => (props.variant === 'nav' ? 'none' : '1rem 2rem')};
+  padding: ${(props) => (props.variant === 'nav' ? '0' : '1rem 2rem')};
   background-color: ${(props) =>
     props.variant === 'nav'
       ? 'transparent'

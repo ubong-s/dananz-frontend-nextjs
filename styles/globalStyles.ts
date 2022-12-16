@@ -145,7 +145,8 @@ const bodyStyles = css`
     letter-spacing: 0.5px;
   }
 
-  input {
+  input,
+  textarea {
     font-size: 14px;
     outline: none;
 
@@ -157,6 +158,16 @@ const bodyStyles = css`
   button {
     cursor: pointer;
     font-size: 13px;
+    border: none;
+    padding: 1rem 2rem;
+    background-color: ${(props) => props.theme.colors.main.primary100};
+    color: ${(props) => props.theme.colors.grayScale.white};
+    transition: ${misc.transition};
+
+    &:hover {
+      opacity: 0.85;
+      transition: ${misc.transition.ease};
+    }
 
     @media screen and (min-width: ${breakpoints.tablet}) {
       font-size: 14px;
