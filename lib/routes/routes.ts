@@ -3,5 +3,6 @@ export enum routes {
   aboutUs = 'about-us',
   services = 'services',
   ourTeams = 'our-teams',
+  portfolio = 'portfolio',
   contactUs = 'contact-us',
 }

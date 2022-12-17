@@ -7,7 +7,7 @@ export default function OurTeamsPage() {
       <PageHeader
         title='Our Teams'
         description='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-        imageURL='/assets/team-header.png'
+        imageURL='/assets/headers/team-header.png'
       />
       <TeamMembers />
       <WhyChooseUs />
