@@ -1,5 +1,6 @@
 import { Button } from './Button';
 import { Container } from './Container';
+import { ImageTextLayout } from './ImageTextLayout';
 import { Layout } from './Layout';
 import { Logo } from './Logo';
 import { PageHeader } from './PageHeader';
@@ -9,13 +10,14 @@ import { Stats } from './Stats';
 import { WhyChooseUs } from './WhyChooseUs';
 
 export {
-  WhyChooseUs,
   Button,
   Container,
+  ImageTextLayout,
   Layout,
   Logo,
-  SectionHeading,
-  Stats,
   PageHeader,
   ProductList,
+  SectionHeading,
+  Stats,
+  WhyChooseUs,
 };

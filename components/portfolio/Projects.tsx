@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 import { projects } from '../../lib/portfolio/index';
 import { ImageTextLayout } from '../_common/ImageTextLayout';
 
 const ProjectsRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 80px 0;
+  ${mediaQueries.desktop} {
+    padding: 5rem 0;
   }
 `;
 
@@ -17,7 +17,7 @@ const ProjectsList = styled.div`
   gap: 2rem;
 `;
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
   return (
     <ProjectsRoot>
       <SectionHeading title='Projects' />

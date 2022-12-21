@@ -1,6 +1,6 @@
 import { HiOutlineBars3BottomRight, HiOutlineXMark } from 'react-icons/hi2';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 interface NavToggleProps {
   navOpen: boolean;
@@ -12,7 +12,7 @@ const NavToggleRoot = styled.button`
   border: none;
   font-size: 2rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     display: none;
   }
 `;

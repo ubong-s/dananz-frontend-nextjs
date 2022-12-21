@@ -1,43 +1,43 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { breakpoints, misc } from '../../styles';
+import { mediaQueries, misc } from '../../styles';
 import { SectionHeading } from '.';
 
 const WhyChooseUsRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 90px 0;
+  ${mediaQueries.desktop} {
+    padding: 5.6rem 0;
   }
 `;
 
 const WhyChooseUsGrid = styled.div`
   display: grid;
   gap: 1rem;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 const WhyChooseUsGridItem = styled.div`
   text-align: center;
-  padding: 27px;
+  padding: 1.7rem;
   box-shadow: ${misc.shadowAlt};
 
   h4 {
-    padding: 10px 0;
+    padding: 0.625rem 0;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     h4 {
-      font-size: 24px;
+      font-size: 1rem;
     }
   }
 `;
 
-export const WhyChooseUs = () => {
+export const WhyChooseUs: React.FC = () => {
   const whyList = [
     {
       id: 1,

@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
 import { Button, Container } from '../_common';
 import Link from 'next/link';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 const CTARoot = styled.div`
-  padding: 50px 0;
+  padding: 3.125rem 0;
   background-color: ${(props) => props.theme.colors.main.primary100};
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0;
+  ${mediaQueries.desktop} {
+    padding: 4.7rem 0;
   }
 `;
 
@@ -27,22 +27,22 @@ const CTAInner = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: 1.5fr 1fr;
     align-items: flex-start;
     gap: 5rem;
 
     h2 {
-      font-size: 36px;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 `;
 
-export const CallToAction = (): React.ReactElement => {
+export const CallToAction: React.FC = () => {
   return (
     <CTARoot>
       <Container>

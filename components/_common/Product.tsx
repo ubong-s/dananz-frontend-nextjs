@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography, breakpoints } from '../../styles/globalStyles';
+import { typography, mediaQueries } from '../../styles';
 
 interface ProductProps {
   product: { id: number; theme: string; description: string };
@@ -17,10 +17,10 @@ const ProductRoot = styled.div`
 
   .number,
   h4 {
-    line-height: 40px;
+    line-height: 2.5rem;
     font-weight: ${typography.weight.semibold};
     color: ${(props) => props.theme.colors.grayScale.black};
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 
   h4 {
@@ -33,13 +33,13 @@ const ProductRoot = styled.div`
     border: none;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    gap: 80px;
+  ${mediaQueries.desktop} {
+    gap: 5rem;
 
     .number,
     h4 {
-      line-height: 45px;
-      font-size: 32px;
+      line-height: 2.8rem;
+      font-size: 2rem;
     }
   }
 `;

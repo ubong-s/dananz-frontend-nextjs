@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 interface StatProps {
   count: number;
@@ -8,22 +8,22 @@ interface StatProps {
 
 const StatRoot = styled.p`
   color: ${(props) => props.theme.colors.grayScale.white};
-  font-size: 32px;
+  font-size: 2rem;
   padding: 1rem 2rem 1.5rem;
   border-bottom: dashed 1px ${(props) => props.theme.colors.grayScale.lightGray};
   margin-bottom: 0;
 
   span {
     display: block;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &:last-of-type {
     border-bottom: none;
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
-    font-size: 40px;
+  ${mediaQueries.tablet} {
+    font-size: 2.5rem;
     border-right: dashed 1px
       ${(props) => props.theme.colors.grayScale.lightGray};
     border-bottom: none;
@@ -33,25 +33,25 @@ const StatRoot = styled.p`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     text-align: center;
-    font-size: 52px;
+    font-size: 3.25rem;
     border: none;
-    padding: 25px 50px;
+    padding: 1.6rem 3.125rem;
   }
 `;
 
 const StatsRoot = styled.div`
   background-color: ${(props) => props.theme.colors.main.primary100};
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     grid-template-columns: 1fr;
-    padding: 25px 0;
+    padding: 1.6rem 0;
   }
 `;
 

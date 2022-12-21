@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, misc, myTheme } from '../../styles';
+import { mediaQueries, misc, myTheme } from '../../styles';
 
 interface ServiceProps {
   index: number;
@@ -60,10 +60,10 @@ const ServiceRoot = styled.article`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     .heading_wrap {
       h4 {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
   }

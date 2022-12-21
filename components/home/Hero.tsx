@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { Stats } from '../_common';
 
 const HeroRoot = styled.div`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
   img {
     height: 300px;
     object-fit: cover;
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     img {
       height: 100%;
     }
@@ -41,15 +41,15 @@ const HeroTop = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     h1 {
-      font-size: 50px;
+      font-size: 3.125rem;
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     h1 {
-      font-size: 72px;
+      font-size: 4.5rem;
       max-width: 680px;
     }
 
@@ -75,7 +75,7 @@ const HeroTop = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     .line {
       left: 45%;
       width: 55%;
@@ -88,14 +88,14 @@ const HeroTop = styled.div`
 `;
 
 const HeroStats = styled.div`
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     position: absolute;
     left: 65%;
     top: 50%;
   }
 `;
 
-export const Hero = (): React.ReactElement => {
+export const Hero: React.FC = () => {
   return (
     <HeroRoot>
       <HeroTop>

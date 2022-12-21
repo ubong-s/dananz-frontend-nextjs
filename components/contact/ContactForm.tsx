@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 const ContactFormRoot = styled.section``;
 const Form = styled.form`
@@ -25,7 +25,7 @@ const Form = styled.form`
 
     input,
     textarea {
-      padding: 18px 32px;
+      padding: 1.25rem 2rem;
     }
   }
 
@@ -34,14 +34,14 @@ const Form = styled.form`
     margin-top: 2rem;
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     .two_columns {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 `;
 
-export const ContactForm = () => {
+export const ContactForm: React.FC = () => {
   return (
     <ContactFormRoot>
       <Form>

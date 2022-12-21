@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
-import { breakpoints, typography, misc } from '../../styles';
+import { mediaQueries, misc } from '../../styles';
 import { Button, SectionHeading } from '../_common';
 
 const AboutRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0;
+  ${mediaQueries.desktop} {
+    padding: 4.68rem 0;
   }
 `;
 
@@ -17,13 +17,13 @@ const AboutBottom = styled.div`
   display: grid;
   gap: 1rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     align-items: center;
     grid-template-columns: 2.5fr 1fr;
-    gap: 94px;
+    gap: 5.875rem;
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     grid-template-columns: 880px auto;
   }
 `;
@@ -41,7 +41,7 @@ const AboutImage = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 20px;
+    padding: 1.25rem;
     box-shadow: ${misc.shadow};
     right: 1rem;
     bottom: 1.1rem;
@@ -59,16 +59,16 @@ const AboutImage = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     .img {
       height: 100%;
     }
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     .profile {
       bottom: unset;
-      top: 27px;
+      top: 1.7rem;
       right: -200px;
     }
   }
@@ -76,19 +76,19 @@ const AboutImage = styled.div`
 
 const AboutContent = styled.div`
   p {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
-    padding-top: 80px;
+  ${mediaQueries.large} {
+    padding-top: 5rem;
 
     p {
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
   }
 `;
 
-export const About = (): React.ReactElement => {
+export const About: React.FC = () => {
   return (
     <AboutRoot>
       <SectionHeading

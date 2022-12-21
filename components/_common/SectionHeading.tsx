@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { typography } from '../../styles';
-import { breakpoints } from '../../styles/globalStyles';
+import { mediaQueries } from '../../styles';
 
 interface SectionHeadingProps {
   title: string;
@@ -14,9 +14,6 @@ const SectionHeadingRoot = styled.div`
   display: grid;
   gap: 2rem;
   margin-bottom: 1rem;
-
-  @media screen and (min-width: ${breakpoints.desktop}) {
-  }
 `;
 
 const SectionHeadingTop = styled.div`
@@ -28,25 +25,25 @@ const SectionHeadingTop = styled.div`
 
   h2 {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: ${typography.weight.medium};
-    line-height: 24px;
+    line-height: 1.5rem;
     color: ${(props) => props.theme.colors.grayScale.black};
   }
 
   .line {
-    height: 2px;
+    height: 0.125rem;
     background-color: ${(props) => props.theme.colors.grayScale.black};
     width: 100%;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     max-width: 600px;
   }
 `;
 
 const SectionHeadingBottom = styled.div`
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     &.half {
       h3 {
         max-width: 740px;

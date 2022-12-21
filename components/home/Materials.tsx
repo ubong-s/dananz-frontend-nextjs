@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { Button, SectionHeading } from '../_common';
 import Image from 'next/image';
 
 const MaterialsRoot = styled.section`
-  padding: 50px 0 80px;
+  padding: 3.125rem 0 5rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0 125px;
+  ${mediaQueries.desktop} {
+    padding: 4.7rem 0 7.8rem;
   }
 `;
 
@@ -16,15 +16,15 @@ const MaterialsContent = styled.div`
   gap: 2rem;
   margin-top: 2rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: 0.8fr 1fr;
     align-items: center;
-    gap: 82px;
+    gap: 5.125rem;
   }
 `;
 
 const MaterialsContentLeft = styled.div`
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     h3 {
       max-width: 348px;
     }
@@ -59,7 +59,7 @@ const MaterialsContentRight = styled.div`
   }
 `;
 
-export const Mateials = (): React.ReactElement => {
+export const Materials: React.FC = () => {
   return (
     <MaterialsRoot>
       <SectionHeading title='Material' />

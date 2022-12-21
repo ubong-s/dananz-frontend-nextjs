@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
-import { breakpoints, misc } from '../../styles';
+import { mediaQueries, misc } from '../../styles';
 import { Container } from '../_common';
 import { Logo } from '../_common/Logo';
 import { NavLink } from './NavLink';
@@ -10,11 +10,11 @@ import { NavToggle } from './NavToggle';
 const NavRoot = styled.header`
   position: relative;
 
-  padding: 20px 0;
+  padding: 1.25rem 0;
   background-color: ${(props) => props.theme.colors.grayScale.white};
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 42px 0;
+  ${mediaQueries.desktop} {
+    padding: 2.6rem 0;
   }
 `;
 
@@ -32,7 +32,7 @@ const NavLinks = styled.nav`
   flex-direction: column;
   background-color: ${(props) => props.theme.colors.grayScale.white};
   gap: 2rem;
-  padding: 20px 5%;
+  padding: 1.25rem 5%;
   width: 100%;
   z-index: 999;
   opacity: 0;
@@ -45,7 +45,7 @@ const NavLinks = styled.nav`
     transition: ${misc.transition.ease};
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     display: flex;
     gap: 4.25rem;
     left: unset;
@@ -74,6 +74,7 @@ export const Nav: React.FC = () => {
     { display: 'Home', route: routes.home },
     { display: 'About Us', route: routes.aboutUs },
     { display: 'Services', route: routes.services },
+    { display: 'Portfolio', route: routes.portfolio },
     { display: 'Our Teams', route: routes.ourTeams },
     { display: 'Contact Us', route: routes.contactUs },
   ];

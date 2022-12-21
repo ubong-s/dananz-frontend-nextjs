@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { services } from '../../lib/services';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 
 const ServicesListRoot = styled.section`
-  padding: 50px 0 25px;
+  padding: 3.125rem 0 1.6rem;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 90px 0 40px;
+  ${mediaQueries.desktop} {
+    padding: 5.6rem 0 3.5rem;
   }
 `;
 
@@ -29,33 +29,33 @@ const ServicesListItem = styled.div`
   }
 
   h4 {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: 0.5rem;
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     img {
       width: 100%;
       height: 300px;
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: 2fr 1fr;
-    gap: 120px;
+    gap: 7.5rem;
 
     img {
       height: 100%;
     }
 
     h4 {
-      font-size: 24px;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
   }
 `;
 
-export const ServicesList = () => {
+export const ServicesList: React.FC = () => {
   return (
     <ServicesListRoot>
       <SectionHeading title='What We Do' />

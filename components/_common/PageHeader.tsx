@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 interface PageHeaderProps {
   title: string;
@@ -16,7 +16,7 @@ const PageHeaderRoot = styled.section`
     object-fit: cover;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     img {
       max-height: 100%;
     }
@@ -24,12 +24,12 @@ const PageHeaderRoot = styled.section`
 `;
 
 const PageHeaderTop = styled.div`
-  padding: 50px 0;
+  padding: 3.125rem 0;
   max-width: 520px;
   margin: auto;
 
   h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: ${(props) => props.theme.colors.grayScale.black};
   }
 
@@ -37,11 +37,11 @@ const PageHeaderTop = styled.div`
     color: ${(props) => props.theme.colors.grayScale.black};
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 80px 0;
+  ${mediaQueries.desktop} {
+    padding: 5rem 0;
 
     h1 {
-      font-size: 56px;
+      font-size: 3.5rem;
     }
   }
 `;

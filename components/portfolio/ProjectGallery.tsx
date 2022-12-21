@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 const ProjectGalleryRoot = styled.section`
-  padding: 25px 0 50px;
+  padding: 1.6rem 0 3.125rem;
   display: grid;
   gap: 1rem;
 
@@ -13,8 +13,8 @@ const ProjectGalleryRoot = styled.section`
     object-fit: cover;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 50px 0 100px;
+  ${mediaQueries.desktop} {
+    padding: 3.125rem 0 6.25rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 
@@ -30,7 +30,7 @@ const ProjectGalleryRoot = styled.section`
   }
 `;
 
-export const ProjectGallery = () => {
+export const ProjectGallery: React.FC = () => {
   return (
     <ProjectGalleryRoot>
       <Image

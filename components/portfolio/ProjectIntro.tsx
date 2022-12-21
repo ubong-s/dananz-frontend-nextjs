@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 
 const ProjectIntroRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
   display: grid;
   gap: 1rem;
 
   h2,
   h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: 1rem;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0;
+  ${mediaQueries.desktop} {
+    padding: 4.7rem 0;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 
@@ -27,12 +27,12 @@ const ProjectIntroRoot = styled.section`
 
     h2,
     h3 {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 `;
 
-export const ProjectIntro = () => {
+export const ProjectIntro: React.FC = () => {
   return (
     <ProjectIntroRoot>
       <div className='project_overview'>

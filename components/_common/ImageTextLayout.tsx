@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
-import { breakpoints, misc } from '../../styles';
+import { mediaQueries, misc } from '../../styles';
 import { Button } from './Button';
 
 interface ImageTextLayoutProps {
@@ -18,7 +18,7 @@ const ImageTextLayoutRoot = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 20px;
+    padding: 1.25rem;
     box-shadow: ${misc.shadow};
     right: 1rem;
     bottom: 1.1rem;
@@ -28,7 +28,7 @@ const ImageTextLayoutRoot = styled.div`
     h4 {
       margin-bottom: 0.25rem;
       line-height: 1;
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     p {
@@ -36,11 +36,11 @@ const ImageTextLayoutRoot = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     align-items: center;
     grid-template-areas: 'image content';
     grid-template-columns: 2.5fr 1fr;
-    gap: 94px;
+    gap: 5.9rem;
 
     &:nth-of-type(even) {
       grid-template-areas: 'content image';
@@ -48,19 +48,18 @@ const ImageTextLayoutRoot = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
+  ${mediaQueries.large} {
     grid-template-columns: 880px auto;
 
     .profile {
       bottom: unset;
-      top: 27px;
+      top: 1.69rem;
       right: -200px;
     }
 
     &:nth-of-type(even) {
       .profile {
         bottom: unset;
-        top: 27px;
         left: -200px;
         right: unset;
       }
@@ -77,13 +76,10 @@ const ImageRoot = styled.div`
     object-fit: cover;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     .img {
       height: 100%;
     }
-  }
-
-  @media screen and (min-width: ${breakpoints.large}) {
   }
 `;
 
@@ -91,14 +87,14 @@ const TextContent = styled.div`
   grid-area: content;
 
   p {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 
-  @media screen and (min-width: ${breakpoints.large}) {
-    padding-top: 80px;
+  ${mediaQueries.large} {
+    padding-top: 5rem;
 
     p {
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
   }
 `;

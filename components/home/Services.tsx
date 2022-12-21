@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 import Image from 'next/image';
 import { Service } from './Service';
 import { services } from '../../lib/services';
 
 const ServicesRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0;
+  ${mediaQueries.desktop} {
+    padding: 4.7rem 0;
   }
 `;
 
@@ -24,7 +24,7 @@ const ServicesTop = styled.div`
     padding: 1rem 0;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     .services {
       padding: 1.5rem 2.5rem 1.5rem 0;
     }
@@ -40,15 +40,15 @@ const ServicesBottom = styled.div`
     object-fit: cover;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    margin-top: -170px;
+  ${mediaQueries.desktop} {
+    margin-top: -10.7rem;
     img {
       height: 100%;
     }
   }
 `;
 
-export const Services = (): React.ReactElement => {
+export const Services: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
   const handleServiceClick = (index: number) => {

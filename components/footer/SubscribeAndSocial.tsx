@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { Container, Logo } from '../_common';
 
 const SubscribeAndSocialRoot = styled.div`
-  padding: 80px 0;
+  padding: 5rem 0;
   display: grid;
   gap: 2rem;
 
@@ -11,7 +11,7 @@ const SubscribeAndSocialRoot = styled.div`
     max-width: 480px;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.tablet} {
     grid-template-columns: 1.5fr 1fr;
     gap: 5rem;
   }
@@ -22,9 +22,9 @@ const SubscribeAndSocialLeft = styled.div`
     color: ${(props) => props.theme.colors.grayScale.black};
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.tablet} {
     h2 {
-      font-size: 36px;
+      font-size: 2.25rem;
     }
   }
 `;
@@ -46,15 +46,15 @@ const SubscribeAndSocialRight = styled.div`
       color: ${(props) => props.theme.colors.grayScale.black};
 
       .circle {
-        height: 10px;
-        width: 10px;
+        height: 0.625rem;
+        width: 0.625rem;
         border-radius: 50%;
         background-color: ${(props) => props.theme.colors.grayScale.black};
       }
     }
 
     input {
-      padding: 16px 0;
+      padding: 1rem 0;
       width: 100%;
       border: none;
       border-bottom: 1px solid ${(props) => props.theme.colors.grayScale.black};
@@ -73,25 +73,25 @@ const SubscribeAndSocialRight = styled.div`
   .social {
     ul {
       display: flex;
-      gap: 16px;
+      gap: 1rem;
     }
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 0.375rem;
       background-color: ${(props) => props.theme.colors.grayScale.lightGray};
-      border-radius: 50px;
+      border-radius: 3.125rem;
 
       img {
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.tablet} {
     /* justify-self: flex-end; */
 
     form {
@@ -99,8 +99,8 @@ const SubscribeAndSocialRight = styled.div`
 
       label {
         .circle {
-          height: 15px;
-          width: 15px;
+          height: 0.94rem;
+          width: 0.94rem;
         }
       }
     }
@@ -109,14 +109,14 @@ const SubscribeAndSocialRight = styled.div`
       justify-self: flex-end;
 
       ul {
-        gap: 25px;
+        gap: 1.6rem;
         justify-content: flex-end;
       }
     }
   }
 `;
 
-export const SubscribeAndSocial = (): React.ReactElement => {
+export const SubscribeAndSocial: React.FC = () => {
   return (
     <Container>
       <SubscribeAndSocialRoot>

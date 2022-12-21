@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 import { SectionHeading } from '.';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { Product } from './Product';
 
 const ProductListRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 75px 0;
+  ${mediaQueries.desktop} {
+    padding: 4.7rem 0;
   }
 `;
 
 const ProductListBottom = styled.div`
   display: grid;
-  gap: 45px;
+  gap: 2.8rem;
 `;
 
-export const ProductList = (): React.ReactElement => {
+export const ProductList: React.FC = () => {
   const productThemes = [
     {
       id: 1,

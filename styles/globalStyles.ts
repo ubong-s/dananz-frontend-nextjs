@@ -1,44 +1,11 @@
 import { createGlobalStyle, css } from 'styled-components';
-
-const misc = {
-  rounded: {
-    xs: '8px',
-    sm: '10px',
-    md: '15px',
-    lg: '20px',
-    full: '999px',
-  },
-  transition: {
-    ease: 'all 0.5s ease-in-out',
-    linear: 'all 0.5s linear',
-  },
-  shadow: '10px 10px 40px rgba(0, 0, 0, 0.05)',
-  shadowAlt: ' 0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
-};
-
-const typography = {
-  type: {
-    primary: `'Poppins', sans-serif`,
-  },
-  weight: {
-    normal: '400',
-    medium: '500',
-    semibold: '600',
-    bold: '700',
-  },
-};
-
-const breakpoints = {
-  mobile: '375px',
-  tablet: '768px',
-  desktop: '1024px',
-  large: '1100px',
-  hd: '1440px',
-};
+import mediaQueries from './mediaQueries';
+import typography from './typography';
+import misc from './misc';
 
 const bodyStyles = css`
   font-family: ${typography.type.primary};
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: ${(props) => props.theme.colors.grayScale.white};
   color: ${(props) => props.theme.colors.grayScale.gray10};
   line-height: 1.6;
@@ -50,7 +17,7 @@ const bodyStyles = css`
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
-    width: 0.75em;
+    width: 0.75rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -63,12 +30,12 @@ const bodyStyles = css`
     /* outline: 1px solid slategrey; */
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
-    font-size: 16px;
+  ${mediaQueries.tablet} {
+    font-size: 1rem;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    font-size: 18px;
+  ${mediaQueries.desktop} {
+    font-size: 1.125rem;
   }
 
   *,
@@ -86,12 +53,12 @@ const bodyStyles = css`
 
   h1 {
     font-weight: ${typography.weight.bold};
-    letter-spacing: 0.5px;
-    line-height: 60px;
+    letter-spacing: 0.03rem;
+    line-height: 3.75rem;
     color: ${(props) => props.theme.colors.main.primary100};
 
-    @media screen and (min-width: ${breakpoints.desktop}) {
-      line-height: 100px;
+    ${mediaQueries.desktop} {
+      line-height: 6.25rem;
     }
   }
 
@@ -101,34 +68,34 @@ const bodyStyles = css`
   h5,
   h6 {
     font-weight: ${typography.weight.semibold};
-    line-height: 40px;
-    letter-spacing: 0.5px;
+    line-height: 2.5rem;
+    letter-spacing: 0.03rem;
     color: ${(props) => props.theme.colors.grayScale.gray50};
 
-    @media screen and (min-width: ${breakpoints.desktop}) {
-      line-height: 60px;
+    ${mediaQueries.desktop} {
+      line-height: 3.75rem;
     }
   }
 
   h3 {
-    font-size: 25px;
+    font-size: 1.56rem;
     margin-bottom: 1rem;
 
-    @media screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 36px;
+    ${mediaQueries.desktop} {
+      font-size: 2.25rem;
     }
   }
 
   p {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 1rem;
 
-    @media screen and (min-width: ${breakpoints.tablet}) {
-      font-size: 16px;
+    ${mediaQueries.tablet} {
+      font-size: 1rem;
     }
 
-    @media screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 18px;
+    ${mediaQueries.desktop} {
+      font-size: 1.125rem;
     }
   }
 
@@ -142,22 +109,22 @@ const bodyStyles = css`
 
   a {
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.03rem;
   }
 
   input,
   textarea {
-    font-size: 14px;
+    font-size: 0.875rem;
     outline: none;
 
-    @media screen and (min-width: ${breakpoints.tablet}) {
-      font-size: 16px;
+    ${mediaQueries.tablet} {
+      font-size: 1rem;
     }
   }
 
   button {
     cursor: pointer;
-    font-size: 13px;
+    font-size: 0.8rem;
     border: none;
     padding: 1rem 2rem;
     background-color: ${(props) => props.theme.colors.main.primary100};
@@ -169,8 +136,8 @@ const bodyStyles = css`
       transition: ${misc.transition.ease};
     }
 
-    @media screen and (min-width: ${breakpoints.tablet}) {
-      font-size: 14px;
+    ${mediaQueries.tablet} {
+      font-size: 0.825rem;
     }
   }
 
@@ -186,7 +153,7 @@ const bodyStyles = css`
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 0.3rem;
   }
 
   /* Fancy blur effect */
@@ -259,10 +226,12 @@ const bodyStyles = css`
 const GlobalStyle = createGlobalStyle`
    html {
       scroll-behavior: smooth;
+      font-size: 16px;
+
    }
    body {
       ${bodyStyles}
    }
 `;
 
-export { GlobalStyle, breakpoints, typography, misc };
+export default GlobalStyle;

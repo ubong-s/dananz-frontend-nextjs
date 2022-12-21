@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { SectionHeading, Stats } from '../_common';
 
 const AchievementRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 80px 0;
+  ${mediaQueries.desktop} {
+    padding: 5rem 0;
   }
 `;
 
@@ -21,7 +21,7 @@ const AchievementBottom = styled.div`
     width: 100%;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: 3.5fr 1fr;
     gap: 3rem;
 
@@ -31,7 +31,7 @@ const AchievementBottom = styled.div`
   }
 `;
 
-export const Achievement = () => {
+export const Achievement: React.FC = () => {
   return (
     <AchievementRoot>
       <SectionHeading

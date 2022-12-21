@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { SectionHeading } from '../_common';
-import { breakpoints } from '../../styles';
+import { mediaQueries } from '../../styles';
 import { members } from '../../lib/our-teams/members';
 import Image from 'next/image';
 
 const TeamMembersRoot = styled.section`
-  padding: 50px 0;
+  padding: 3.125rem 0;
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    padding: 80px 0;
+  ${mediaQueries.desktop} {
+    padding: 5rem 0;
   }
 `;
 
@@ -17,7 +17,7 @@ const TeamMembersGrid = styled.div`
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
   }
@@ -27,7 +27,7 @@ const TeamMember = styled.div`
   background-color: ${(props) => props.theme.colors.main.primary100};
   position: relative;
   line-height: 0;
-  padding-top: 14px;
+  padding-top: 0.875rem;
 
   img {
     height: 300px;
@@ -40,10 +40,10 @@ const TeamMember = styled.div`
   .content {
     position: absolute;
     background-color: ${(props) => props.theme.colors.grayScale.white};
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 18px 16px;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 1.125rem 1rem;
 
     h4,
     p {
@@ -59,7 +59,7 @@ const TeamMember = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  ${mediaQueries.tablet} {
     img {
       width: 100%;
       object-fit: contain;
@@ -67,7 +67,7 @@ const TeamMember = styled.div`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  ${mediaQueries.desktop} {
     img {
       width: 100%;
       object-fit: unset;
@@ -75,12 +75,12 @@ const TeamMember = styled.div`
     }
 
     h4 {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 `;
 
-export const TeamMembers = () => {
+export const TeamMembers: React.FC = () => {
   return (
     <TeamMembersRoot>
       <SectionHeading
