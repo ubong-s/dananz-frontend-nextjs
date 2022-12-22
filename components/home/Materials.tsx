@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
 import { Button, SectionHeading } from '../_common';
 import Image from 'next/image';
+import { ImageProps, SectionHeadingProps } from '../../types/global';
 
 const MaterialsRoot = styled.section`
   padding: 3.125rem 0 5rem;
@@ -59,38 +60,33 @@ const MaterialsContentRight = styled.div`
   }
 `;
 
-export const Materials: React.FC = () => {
+interface MaterialsProps {
+  title: SectionHeadingProps;
+  images: ImageProps[];
+}
+
+export const Materials: React.FC<MaterialsProps> = ({ title, images }) => {
+  console.log(images);
+
   return (
     <MaterialsRoot>
-      <SectionHeading title='Material' />
+      <SectionHeading heading={title.heading} />
       <MaterialsContent>
         <MaterialsContentLeft>
-          <h3>Choice of materials for quality furniture.</h3>
-          <p>
-            You can custom the material as desired. And our furniture uses the
-            best materials and selected quality materials.
-          </p>
+          <h3>{title.subheading}</h3>
+          <p>{title.description}</p>
           <Button variant='button-alt'>Materials</Button>
         </MaterialsContentLeft>
         <MaterialsContentRight>
-          <Image
-            src='/assets/material_img_1.png'
-            alt='material img 1'
-            width={315}
-            height={392}
-          />
-          <Image
-            src='/assets/material_img_2.png'
-            alt='material img 2'
-            width={241}
-            height={225}
-          />
-          <Image
-            src='/assets/material_img_3.png'
-            alt='material img 3'
-            width={194}
-            height={178}
-          />
+          {images.map((image) => (
+            <Image
+              key={image.id}
+              src={image.attributes.url}
+              alt={image.attributes.name}
+              width={image.attributes.width}
+              height={image.attributes.height}
+            />
+          ))}
         </MaterialsContentRight>
       </MaterialsContent>
     </MaterialsRoot>

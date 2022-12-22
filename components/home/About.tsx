@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
 import { mediaQueries, misc } from '../../styles';
+import { SectionHeadingProps, ImageProps } from '../../types/global';
 import { Button, SectionHeading } from '../_common';
 
 const AboutRoot = styled.section`
@@ -88,21 +89,28 @@ const AboutContent = styled.div`
   }
 `;
 
-export const About: React.FC = () => {
+interface AboutProps {
+  title: SectionHeadingProps;
+  image: ImageProps;
+  content: string;
+}
+
+export const About: React.FC<AboutProps> = ({ title, image, content }) => {
   return (
     <AboutRoot>
       <SectionHeading
-        title='About'
-        subtitle={`“We're one of the best furniture agency. Prioritizing customers and making purchases easy are the hallmarks of our agency.”`}
+        heading={title.heading}
+        subheading={title.subheading}
+        type={title.type}
       />
 
       <AboutBottom>
         <AboutImage>
           <Image
-            src='/assets/home_about.png'
-            alt='ABout'
-            width={883}
-            height={525}
+            src={image.attributes.url}
+            alt={image.attributes.name}
+            width={image.attributes.width}
+            height={image.attributes.height}
             className='img'
           />
           <div className='profile'>
@@ -120,10 +128,7 @@ export const About: React.FC = () => {
           </div>
         </AboutImage>
         <AboutContent>
-          <p>
-            Online learning with us does not interfere with your daily life.
-            because learning can be done anytime and anywhere.
-          </p>
+          <p>{content}</p>
 
           <Link href={`/${routes.aboutUs}`} passHref>
             <Button variant='button'>Learn More</Button>

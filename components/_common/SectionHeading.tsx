@@ -2,13 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { typography } from '../../styles';
 import { mediaQueries } from '../../styles';
-
-interface SectionHeadingProps {
-  title: string;
-  subtitle?: string;
-  subtitleDesc?: string;
-  subtitleType?: 'full' | 'half' | 'grid';
-}
+import { SectionHeadingProps } from '../../types/global';
 
 const SectionHeadingRoot = styled.div`
   display: grid;
@@ -72,21 +66,21 @@ const SectionHeadingBottom = styled.div`
 `;
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
-  title,
-  subtitle,
-  subtitleDesc,
-  subtitleType,
+  heading,
+  subheading,
+  description,
+  type,
 }) => {
   return (
     <SectionHeadingRoot>
       <SectionHeadingTop>
-        <h2>{title}</h2>
+        <h2>{heading}</h2>
         <span className='line'></span>
       </SectionHeadingTop>
-      {subtitle && (
-        <SectionHeadingBottom className={subtitleType}>
-          <h3>{subtitle}</h3>
-          {subtitle && <p>{subtitleDesc}</p>}
+      {subheading && (
+        <SectionHeadingBottom className={type}>
+          <h3>{subheading}</h3>
+          {subheading && <p>{description}</p>}
         </SectionHeadingBottom>
       )}
     </SectionHeadingRoot>

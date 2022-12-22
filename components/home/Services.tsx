@@ -4,7 +4,11 @@ import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 import Image from 'next/image';
 import { Service } from './Service';
-import { services } from '../../lib/services';
+import {
+  ImageProps,
+  SectionHeadingProps,
+  ServiceProps,
+} from '../../types/global';
 
 const ServicesRoot = styled.section`
   padding: 3.125rem 0;
@@ -48,7 +52,17 @@ const ServicesBottom = styled.div`
   }
 `;
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+  title: SectionHeadingProps;
+  image: ImageProps;
+  services: ServiceProps[];
+}
+
+export const Services: React.FC<ServicesProps> = ({
+  title,
+  image,
+  services,
+}) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
   const handleServiceClick = (index: number) => {
@@ -63,12 +77,10 @@ export const Services: React.FC = () => {
     <ServicesRoot>
       <ServicesTop>
         <SectionHeading
-          title='Services'
-          subtitle='Attractive furniture with the best quality.'
-          subtitleDesc=' Customize your interior design into a dream place with the best
-          designers and quality furniture. We try our best to fulfill your
-          expectations.'
-          subtitleType='half'
+          heading={title.heading}
+          subheading={title.subheading}
+          description={title.description}
+          type={title.type}
         />
 
         <div className='services'>
@@ -76,7 +88,7 @@ export const Services: React.FC = () => {
             return (
               <Service
                 index={index}
-                key={service.title}
+                key={service.id}
                 service={service}
                 activeIndex={activeIndex}
                 handleService={handleServiceClick}
@@ -87,10 +99,10 @@ export const Services: React.FC = () => {
       </ServicesTop>
       <ServicesBottom>
         <Image
-          src='/assets/home_services.png'
-          alt='Services'
-          width={1076}
-          height={680}
+          src={image.attributes.url}
+          alt={image.attributes.name}
+          width={image.attributes.width}
+          height={image.attributes.height}
           className='img'
         />
       </ServicesBottom>

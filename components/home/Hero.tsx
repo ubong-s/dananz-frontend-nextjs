@@ -95,21 +95,26 @@ const HeroStats = styled.div`
   }
 `;
 
-export const Hero: React.FC = () => {
+export interface HeroProps {
+  title: string;
+  image: string;
+}
+
+export const Hero: React.FC<HeroProps> = ({ title, image }) => {
   return (
     <HeroRoot>
       <HeroTop>
-        <h1>Design your interor with high quality.</h1>
+        <h1>{title}</h1>
         <div className='line'></div>
         <p className='copyright'>
-          2022 <span>ALL RIGHT RESERVED</span>
+          {new Date().getFullYear()} <span>ALL RIGHT RESERVED</span>
         </p>
 
         <HeroStats>
           <Stats />
         </HeroStats>
       </HeroTop>
-      <Image src='/assets/hero_img.png' alt='Hero' width={1200} height={513} />
+      <Image src={image} alt='Hero' width={1200} height={513} />
     </HeroRoot>
   );
 };

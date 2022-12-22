@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries, misc, myTheme } from '../../styles';
-
-interface ServiceProps {
-  index: number;
-  service: {
-    title: string;
-    text: string;
-  };
-  activeIndex: number | null;
-  handleService: (index: number) => void;
-}
+import { ServiceProps } from '../../types/global';
 
 const ServiceRoot = styled.article`
   padding: 0.25rem 0;
@@ -69,7 +60,14 @@ const ServiceRoot = styled.article`
   }
 `;
 
-export const Service: React.FC<ServiceProps> = ({
+interface ServiceComponentProps {
+  index: number;
+  service: ServiceProps;
+  activeIndex: number | null;
+  handleService: (index: number) => void;
+}
+
+export const Service: React.FC<ServiceComponentProps> = ({
   index,
   service,
   activeIndex,
@@ -79,12 +77,12 @@ export const Service: React.FC<ServiceProps> = ({
     <ServiceRoot key={index} onClick={() => handleService(index)}>
       <div className='heading_wrap'>
         <h4 className={activeIndex === index ? 'active' : ''}>
-          {index < 9 ? `0${index + 1}` : index + 1}. {service.title}
+          {index < 9 ? `0${index + 1}` : index + 1}. {service.service_title}
         </h4>
 
         <button
           type='button'
-          title={`View ${service.title}`}
+          title={`View ${service.service_title}`}
           onClick={() => handleService(index)}
           className={activeIndex === index ? 'active' : ''}
         >
@@ -121,7 +119,7 @@ export const Service: React.FC<ServiceProps> = ({
         </button>
       </div>
       <p className={activeIndex === index ? 'text active' : 'text'}>
-        {service.text}
+        {service.service_desc}
       </p>
     </ServiceRoot>
   );

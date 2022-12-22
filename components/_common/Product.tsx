@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { typography, mediaQueries } from '../../styles';
+import { ProductProps } from '../../types/global';
 
-interface ProductProps {
-  product: { id: number; theme: string; description: string };
+interface ProductCompProps {
+  product: ProductProps;
 }
 
 const ProductRoot = styled.div`
@@ -44,17 +45,17 @@ const ProductRoot = styled.div`
   }
 `;
 
-export const Product: React.FC<ProductProps> = ({ product }) => {
+export const Product: React.FC<ProductCompProps> = ({ product }) => {
   return (
     <ProductRoot>
       <span className='number'>
         {product.id > 10 ? product.id : `0${product.id}`}
       </span>
       <div className='content'>
-        <h4>{product.theme}</h4>
-        <p>{product.description}</p>
+        <h4>{product.product_heading}</h4>
+        <p>{product.product_desc}</p>
       </div>
-      <button type='button' title={`View ${product.theme}`}>
+      <button type='button' title={`View ${product.product_heading}`}>
         <svg
           width='32'
           height='32'
@@ -65,16 +66,16 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
           <path
             d='M6.66699 16H25.3337'
             stroke='black'
-            stroke-width='2'
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           />
           <path
             d='M16 6.66667L25.3333 16L16 25.3333'
             stroke='black'
-            stroke-width='2'
-            stroke-linecap='round'
-            stroke-linejoin='round'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           />
         </svg>
       </button>
