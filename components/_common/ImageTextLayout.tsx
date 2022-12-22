@@ -5,10 +5,7 @@ import { routes } from '../../lib/routes/routes';
 import { mediaQueries, misc } from '../../styles';
 import { Button } from './Button';
 
-interface ImageTextLayoutProps {
-  project: { cover_image: string; description: string; slug: string };
-}
-
+// styles
 const ImageTextLayoutRoot = styled.div`
   display: grid;
   gap: 1rem;
@@ -98,6 +95,10 @@ const TextContent = styled.div`
     }
   }
 `;
+// types
+interface ImageTextLayoutProps {
+  project: { cover_image: string; description: string; slug: string };
+}
 
 export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
   project,

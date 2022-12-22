@@ -2,12 +2,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
 
-interface PageHeaderProps {
-  title: string;
-  description: string;
-  imageURL?: string;
-}
-
+// styles
 const PageHeaderRoot = styled.section`
   text-align: center;
 
@@ -45,6 +40,13 @@ const PageHeaderTop = styled.div`
     }
   }
 `;
+
+// types
+interface PageHeaderProps {
+  title: string;
+  description: string;
+  imageURL?: string;
+}
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
   title,

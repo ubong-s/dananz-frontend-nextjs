@@ -2,10 +2,7 @@ import styled from 'styled-components';
 import { typography, mediaQueries } from '../../styles';
 import { ProductProps } from '../../types/global';
 
-interface ProductCompProps {
-  product: ProductProps;
-}
-
+// styles
 const ProductRoot = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -44,6 +41,11 @@ const ProductRoot = styled.div`
     }
   }
 `;
+
+// types
+interface ProductCompProps {
+  product: ProductProps;
+}
 
 export const Product: React.FC<ProductCompProps> = ({ product }) => {
   return (

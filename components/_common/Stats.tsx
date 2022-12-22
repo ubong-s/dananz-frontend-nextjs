@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
 
-interface StatProps {
-  count: number;
-  text: string;
-}
-
+// styles
 const StatRoot = styled.p`
   color: ${(props) => props.theme.colors.grayScale.white};
   font-size: 2rem;
@@ -54,6 +50,12 @@ const StatsRoot = styled.div`
     padding: 1.6rem 0;
   }
 `;
+
+// types
+interface StatProps {
+  count: number;
+  text: string;
+}
 
 const Stat: React.FC<StatProps> = ({ count, text }) => {
   return (

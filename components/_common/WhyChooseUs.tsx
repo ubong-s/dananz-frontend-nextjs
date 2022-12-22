@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { mediaQueries, misc } from '../../styles';
 import { SectionHeading } from '.';
 
+// styles
 const WhyChooseUsRoot = styled.section`
   padding: 3.125rem 0;
 
@@ -37,6 +38,7 @@ const WhyChooseUsGridItem = styled.div`
   }
 `;
 
+// types
 export const WhyChooseUs: React.FC = () => {
   const whyList = [
     {
@@ -62,12 +64,12 @@ export const WhyChooseUs: React.FC = () => {
   return (
     <WhyChooseUsRoot>
       <SectionHeading
-        title='Service'
-        subtitle='Why Choose Us'
-        subtitleDesc='Customize your interior design into a dream place with the best
+        heading='Service'
+        subheading='Why Choose Us'
+        description='Customize your interior design into a dream place with the best
           designers and quality furniture. We try our best to fulfill your
           expectations.'
-        subtitleType='half'
+        type='half'
       />
       <WhyChooseUsGrid>
         {whyList.map((item) => (

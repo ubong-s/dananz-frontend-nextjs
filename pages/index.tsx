@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import Head from 'next/head';
-import { About } from '../components/home/About';
-import { Hero } from '../components/home/Hero';
-import { ProductList } from '../components/_common/ProductList';
-import { Services } from '../components/home/Services';
-import { Materials } from '../components/home/Materials';
-import strapiService from '../lib/api/strapiService';
+import { About, Hero, Materials, Services } from '../components/home';
+import { Seo, ProductList } from '../components/_common';
 import { HomepageProps } from '../types/global';
-import useSWR from 'swr';
+import strapiService from '../lib/api/strapiService';
 
 export default function HomePage({ data }: { data: HomepageProps }) {
   return (
     <>
+      <Seo
+        metaTitle={data.attributes.meta_title}
+        metaDescription={data.attributes.meta_description}
+      />
       <Hero
         title={data.attributes?.hero_title}
         image={data.attributes?.hero_image.data.attributes.url}

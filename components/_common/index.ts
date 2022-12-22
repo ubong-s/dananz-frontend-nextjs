@@ -6,6 +6,7 @@ import { Logo } from './Logo';
 import { PageHeader } from './PageHeader';
 import { ProductList } from './ProductList';
 import { SectionHeading } from './SectionHeading';
+import { Seo } from './Seo';
 import { Stats } from './Stats';
 import { WhyChooseUs } from './WhyChooseUs';
 
@@ -18,6 +19,7 @@ export {
   PageHeader,
   ProductList,
   SectionHeading,
+  Seo,
   Stats,
   WhyChooseUs,
 };

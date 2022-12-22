@@ -4,6 +4,7 @@ import { mediaQueries } from '../../styles';
 import { ProductProps, SectionHeadingProps } from '../../types/global';
 import { Product } from './Product';
 
+// styles
 const ProductListRoot = styled.section`
   padding: 3.125rem 0;
 
@@ -17,6 +18,7 @@ const ProductListBottom = styled.div`
   gap: 2.8rem;
 `;
 
+// types
 interface ProductListProps {
   title: SectionHeadingProps;
   products: ProductProps[];

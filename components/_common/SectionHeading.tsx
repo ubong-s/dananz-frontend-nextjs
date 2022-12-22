@@ -4,6 +4,7 @@ import { typography } from '../../styles';
 import { mediaQueries } from '../../styles';
 import { SectionHeadingProps } from '../../types/global';
 
+// styles
 const SectionHeadingRoot = styled.div`
   display: grid;
   gap: 2rem;
