@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import { StatProps } from '../../types/global';
 
 // styles
 const StatRoot = styled.p`
@@ -52,12 +53,11 @@ const StatsRoot = styled.div`
 `;
 
 // types
-interface StatProps {
-  count: number;
-  text: string;
+interface StatCompProps {
+  stats: StatProps[];
 }
 
-const Stat: React.FC<StatProps> = ({ count, text }) => {
+const Stat: React.FC<StatProps> = ({ id, count, text }) => {
   return (
     <StatRoot>
       {count}+ <span>{text}</span>
@@ -65,12 +65,12 @@ const Stat: React.FC<StatProps> = ({ count, text }) => {
   );
 };
 
-export const Stats = (): React.ReactElement => {
+export const Stats: React.FC<StatCompProps> = ({ stats }) => {
   return (
     <StatsRoot>
-      <Stat count={250} text='Project Completed' />
-      <Stat count={23} text='Professional Teams' />
-      <Stat count={15} text='Years Experience' />
+      {stats.map((stat) => (
+        <Stat key={stat.id} count={stat.count} text={stat.text} />
+      ))}
     </StatsRoot>
   );
 };

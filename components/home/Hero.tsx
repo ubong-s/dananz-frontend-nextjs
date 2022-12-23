@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import { ImageProps, StatProps } from '../../types/global';
 import { Stats } from '../_common';
 
 const HeroRoot = styled.div`
@@ -97,10 +98,11 @@ const HeroStats = styled.div`
 
 export interface HeroProps {
   title: string;
-  image: string;
+  image: ImageProps;
+  stats: StatProps[];
 }
 
-export const Hero: React.FC<HeroProps> = ({ title, image }) => {
+export const Hero: React.FC<HeroProps> = ({ title, image, stats }) => {
   return (
     <HeroRoot>
       <HeroTop>
@@ -111,10 +113,15 @@ export const Hero: React.FC<HeroProps> = ({ title, image }) => {
         </p>
 
         <HeroStats>
-          <Stats />
+          <Stats stats={stats} />
         </HeroStats>
       </HeroTop>
-      <Image src={image} alt='Hero' width={1200} height={513} />
+      <Image
+        src={image.attributes.url}
+        alt={image.attributes.name}
+        width={image.attributes.width}
+        height={image.attributes.height}
+      />
     </HeroRoot>
   );
 };

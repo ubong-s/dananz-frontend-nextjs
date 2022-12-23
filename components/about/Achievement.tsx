@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import { ImageProps, SectionHeadingProps, StatProps } from '../../types/global';
 import { SectionHeading, Stats } from '../_common';
 
 const AchievementRoot = styled.section`
@@ -31,23 +32,33 @@ const AchievementBottom = styled.div`
   }
 `;
 
-export const Achievement: React.FC = () => {
+// types
+interface AchievementProps {
+  stats: StatProps[];
+  title: SectionHeadingProps;
+  image: ImageProps;
+}
+
+export const Achievement: React.FC<AchievementProps> = ({
+  stats,
+  title,
+  image,
+}) => {
   return (
     <AchievementRoot>
       <SectionHeading
-        title='Achievement'
-        subtitle='Interior customization with Danaanz, best quality with professional
-          workers'
-        subtitleType='half'
+        heading={title.heading}
+        subheading={title.subheading}
+        type={title.type}
       />
       <AchievementBottom>
         <Image
-          src='/assets/achievement_img.png'
-          alt='achievement'
-          height={525}
-          width={880}
+          src={image.attributes.url}
+          alt={image.attributes.name}
+          width={image.attributes.width}
+          height={image.attributes.height}
         />
-        <Stats />
+        <Stats stats={stats} />
       </AchievementBottom>
     </AchievementRoot>
   );

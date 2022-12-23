@@ -81,7 +81,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {subheading && (
         <SectionHeadingBottom className={type}>
           <h3>{subheading}</h3>
-          {subheading && <p>{description}</p>}
+          {description && <p>{description}</p>}
         </SectionHeadingBottom>
       )}
     </SectionHeadingRoot>

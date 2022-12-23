@@ -29,7 +29,7 @@ export interface ServiceProps {
 export interface SectionHeadingProps {
   id?: number;
   heading: string;
-  subheading?: string;
+  subheading?: string | null;
   description?: string | null;
   type?: 'full' | 'half' | 'grid';
 }
@@ -63,27 +63,25 @@ export interface ImageProps {
   };
 }
 
-export interface HomepageProps {
+export interface StatProps {
+  id?: number;
+  text: string;
+  count: number;
+}
+
+export interface SeoProps {
   id: number;
-  attributes: {
-    meta_title: string;
-    meta_description: string;
-    hero_title: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    about_text: string;
-    about_image: { data: ImageProps };
-    about_heading: SectionHeadingProps;
-    services_heading: SectionHeadingProps;
-    services: ServiceProps[];
-    service_image: { data: ImageProps };
-    product_heading: SectionHeadingProps;
-    products: ProductProps[];
-    materials_heading: SectionHeadingProps;
-    material_images: {
-      data: ImageProps[];
-    };
-    hero_image: { data: ImageProps };
-  };
+  metaTitle: string;
+  metaDescription: string;
+  keywords?: string | null;
+  metaRobots?: string | null;
+  structuredData?: string | null;
+  metaViewport?: string | null;
+  canonicalURL?: string | null;
+}
+
+export interface PageHeaderProps {
+  id: number;
+  title: string;
+  description: string;
 }

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
 import { mediaQueries, misc } from '../../styles';
+import { ProjectProps } from '../../types/portfolio';
 import { Button } from './Button';
 
 // styles
@@ -75,7 +76,7 @@ const ImageRoot = styled.div`
 
   ${mediaQueries.desktop} {
     .img {
-      height: 100%;
+      height: 525px;
     }
   }
 `;
@@ -83,8 +84,18 @@ const ImageRoot = styled.div`
 const TextContent = styled.div`
   grid-area: content;
 
+  h3 {
+    font-size: 1.25rem;
+  }
+
   p {
     margin-bottom: 1.875rem;
+  }
+
+  ${mediaQueries.desktop} {
+    h3 {
+      font-size: 1.5rem;
+    }
   }
 
   ${mediaQueries.large} {
@@ -97,7 +108,7 @@ const TextContent = styled.div`
 `;
 // types
 interface ImageTextLayoutProps {
-  project: { cover_image: string; description: string; slug: string };
+  project: ProjectProps;
 }
 
 export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
@@ -107,8 +118,8 @@ export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
     <ImageTextLayoutRoot>
       <ImageRoot>
         <Image
-          src='/assets/home_about.png'
-          alt='ABout'
+          src={project.attributes.project_banner.data.attributes.url}
+          alt={project.attributes.project_banner.data.attributes.name}
           width={883}
           height={525}
           className='img'
@@ -128,9 +139,10 @@ export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
         </div>
       </ImageRoot>
       <TextContent>
-        <p>{project.description}</p>
+        <h3>{project.attributes.project_header.title}</h3>
+        <p>{project.attributes.project_header.description}</p>
 
-        <Link href={`/${routes.portfolio}/${project.slug}`} passHref>
+        <Link href={`/${routes.portfolio}/${project.attributes.slug}`} passHref>
           <Button variant='button'>Learn More</Button>
         </Link>
       </TextContent>

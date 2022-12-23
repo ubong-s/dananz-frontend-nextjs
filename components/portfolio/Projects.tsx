@@ -3,6 +3,8 @@ import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 import { projects } from '../../lib/portfolio/index';
 import { ImageTextLayout } from '../_common/ImageTextLayout';
+import strapiService from '../../lib/api/strapiService';
+import { ProjectProps } from '../../types/portfolio';
 
 const ProjectsRoot = styled.section`
   padding: 3.125rem 0;
@@ -15,12 +17,17 @@ const ProjectsRoot = styled.section`
 const ProjectsList = styled.div`
   display: grid;
   gap: 2rem;
+  margin-top: 2rem;
 `;
 
-export const Projects: React.FC = () => {
+interface ProjectsProps {
+  projects: ProjectProps[];
+}
+
+export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsRoot>
-      <SectionHeading title='Projects' />
+      <SectionHeading heading='Projects' />
 
       <ProjectsList>
         {projects.map((project) => {

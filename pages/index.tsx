@@ -1,18 +1,19 @@
 import { About, Hero, Materials, Services } from '../components/home';
 import { Seo, ProductList } from '../components/_common';
-import { HomepageProps } from '../types/global';
+import { HomepageProps } from '../types/home';
 import strapiService from '../lib/api/strapiService';
 
 export default function HomePage({ data }: { data: HomepageProps }) {
   return (
     <>
       <Seo
-        metaTitle={data.attributes.meta_title}
-        metaDescription={data.attributes.meta_description}
+        metaTitle={data.attributes.seo.metaTitle}
+        metaDescription={data.attributes.seo.metaDescription}
       />
       <Hero
         title={data.attributes?.hero_title}
-        image={data.attributes?.hero_image.data.attributes.url}
+        image={data.attributes?.hero_image.data}
+        stats={data.attributes.stats}
       />
       <About
         title={data.attributes.about_heading}
@@ -37,7 +38,7 @@ export default function HomePage({ data }: { data: HomepageProps }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await strapiService.getHomepage();
+  const response = await strapiService.getHomepageData();
 
   return {
     props: {
