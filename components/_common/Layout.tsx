@@ -8,7 +8,13 @@ const LayoutRoot = styled.div`
   min-height: 100vh;
 `;
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+export const Layout = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style: any;
+}) => {
   return (
     <ThemeProvider theme={myTheme}>
       <LayoutRoot>

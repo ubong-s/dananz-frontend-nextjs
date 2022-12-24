@@ -32,39 +32,29 @@ const ProjectIntroRoot = styled.section`
   }
 `;
 
-export const ProjectIntro: React.FC = () => {
+interface ProjectIntroProps {
+  projectOverview: string;
+  designProcess: string;
+}
+
+export const ProjectIntro: React.FC<ProjectIntroProps> = ({
+  projectOverview,
+  designProcess,
+}) => {
   return (
     <ProjectIntroRoot>
       <div className='project_overview'>
         <div>
           <h2>Project Overview</h2>
-          <p>
-            Online learning with us does not interfere with your daily life.
-            because learning can be done anytime and anywhere. Online learning
-            with us does not interfere with your daily life. because learning
-            can be done anytime and anywhere. Online learning with us does not
-            interfere with your daily life. because learning can be done anytime
-            and anywhere.
-          </p>
+          <p>{projectOverview}</p>
         </div>
 
-        <p className='date'>July 22 - 2022</p>
+        {/* <p className='date'>July 22 - 2022</p> */}
       </div>
 
       <div className='project_process'>
         <h3>Design Process</h3>
-        <p>
-          Online learning with us does not interfere with your daily life.
-          because learning can be done anytime and anywhere. Online learning
-          with us does not interfere with your daily life. because learning can
-          be done anytime and anywhere.
-        </p>
-        <p>
-          Online learning with us does not interfere with your daily life.
-          because learning can be done anytime and anywhere. Online learning
-          with us does not interfere with your daily life. because learning can
-          be done anytime and anywhere.
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: designProcess }} />
       </div>
     </ProjectIntroRoot>
   );

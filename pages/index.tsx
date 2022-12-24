@@ -2,10 +2,17 @@ import { About, Hero, Materials, Services } from '../components/home';
 import { Seo, ProductList } from '../components/_common';
 import { HomepageProps } from '../types/home';
 import strapiService from '../lib/api/strapiService';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../lib/animations';
 
 export default function HomePage({ data }: { data: HomepageProps }) {
   return (
-    <>
+    <motion.div
+      variants={fadeIn}
+      initial='initial'
+      animate='animate'
+      exit='initial'
+    >
       <Seo
         metaTitle={data.attributes.seo.metaTitle}
         metaDescription={data.attributes.seo.metaDescription}
@@ -33,7 +40,7 @@ export default function HomePage({ data }: { data: HomepageProps }) {
         title={data.attributes.materials_heading}
         images={data.attributes.material_images.data}
       />
-    </>
+    </motion.div>
   );
 }
 

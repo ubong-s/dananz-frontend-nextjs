@@ -58,7 +58,7 @@ const ServicesListItem = styled.div`
 export const ServicesList: React.FC = () => {
   return (
     <ServicesListRoot>
-      <SectionHeading title='What We Do' />
+      <SectionHeading heading='What We Do' />
       <ServicesListing>
         {services.map((service) => {
           return (

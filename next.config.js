@@ -4,6 +4,8 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['res.cloudinary.com'],
+    // loader: 'custom',
+    // loaderFile: './components/_common/CloudinaryImage.ts',
   },
 };
 

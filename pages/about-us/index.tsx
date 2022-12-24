@@ -1,11 +1,18 @@
 import { Achievement } from '../../components/about/Achievement';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
+import { fadeIn } from '../../lib/animations';
 import strapiService from '../../lib/api/strapiService';
 import { AboutpageProps } from '../../types/about';
+import { motion } from 'framer-motion';
 
 export default function AboutUsPage({ data }: { data: AboutpageProps }) {
   return (
-    <>
+    <motion.div
+      variants={fadeIn}
+      initial='initial'
+      animate='animate'
+      exit='initial'
+    >
       <Seo
         metaTitle={data.attributes.seo.metaTitle}
         metaDescription={data.attributes.seo.metaDescription}
@@ -21,7 +28,7 @@ export default function AboutUsPage({ data }: { data: AboutpageProps }) {
         image={data.attributes.achievement_image.data}
       />
       <WhyChooseUs />
-    </>
+    </motion.div>
   );
 }
 

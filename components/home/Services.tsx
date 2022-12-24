@@ -63,15 +63,7 @@ export const Services: React.FC<ServicesProps> = ({
   image,
   services,
 }) => {
-  const [activeIndex, setActiveIndex] = useState<null | number>(null);
-
-  const handleServiceClick = (index: number) => {
-    if (activeIndex === index) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-    }
-  };
+  const [expanded, setExpanded] = useState<false | number>(false);
 
   return (
     <ServicesRoot>
@@ -90,8 +82,8 @@ export const Services: React.FC<ServicesProps> = ({
                 index={index}
                 key={service.id}
                 service={service}
-                activeIndex={activeIndex}
-                handleService={handleServiceClick}
+                expanded={expanded}
+                setExpanded={setExpanded}
               />
             );
           })}

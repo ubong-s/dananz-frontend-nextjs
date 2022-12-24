@@ -61,9 +61,9 @@ export const Locations: React.FC = () => {
   return (
     <LocationsRoot>
       <SectionHeading
-        title='Locations'
-        subtitle='Visit Our Stores'
-        subtitleType='half'
+        heading='Locations'
+        subheading='Visit Our Stores'
+        type='half'
       />
       <LocationsBody>
         <LocationsInfo>

@@ -84,10 +84,10 @@ export const TeamMembers: React.FC = () => {
   return (
     <TeamMembersRoot>
       <SectionHeading
-        title='Designers'
-        subtitle='Our Experts'
-        subtitleDesc='Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.'
-        subtitleType='half'
+        heading='Designers'
+        subheading='Our Experts'
+        description='Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.'
+        type='half'
       />
       <TeamMembersGrid>
         {members.map((member) => (

@@ -221,6 +221,17 @@ const bodyStyles = css`
       transform: rotate(360deg);
     }
   }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: ${(props) => props.theme.colors.main.primary100};
+    transform-origin: 0%;
+    z-index: 1000;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`

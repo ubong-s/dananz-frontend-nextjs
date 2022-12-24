@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import cloudinaryImageLoader from './CloudinaryImage';
 
 // styles
 const PageHeaderRoot = styled.section`
@@ -20,7 +21,7 @@ const PageHeaderRoot = styled.section`
 
 const PageHeaderTop = styled.div`
   padding: 3.125rem 0;
-  max-width: 520px;
+  max-width: 650px;
   margin: auto;
 
   h1 {

@@ -21,7 +21,12 @@ const getProjects = async () => {
   const response = await fetch(`${baseUrl}/projects?populate=*`);
   const data = await response.json();
 
-  console.log(data);
+  return data;
+};
+
+const getSingleProject = async (slug: string) => {
+  const response = await fetch(`${baseUrl}/projects/slug/${slug}?populate=*`);
+  const data = await response.json();
 
   return data;
 };
@@ -30,6 +35,7 @@ const strapiService = {
   getHomepageData,
   getAboutpageData,
   getProjects,
+  getSingleProject,
 };
 
 export default strapiService;

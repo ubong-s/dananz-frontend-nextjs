@@ -1,8 +1,11 @@
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { mediaQueries, misc, myTheme } from '../../styles';
 import { ServiceProps } from '../../types/global';
+import { motion, AnimatePresence } from 'framer-motion';
+import { collapse } from '../../lib/animations';
 
-const ServiceRoot = styled.article`
+const ServiceRoot = styled(motion.article)`
   padding: 0.25rem 0;
   cursor: pointer;
 
@@ -63,28 +66,30 @@ const ServiceRoot = styled.article`
 interface ServiceComponentProps {
   index: number;
   service: ServiceProps;
-  activeIndex: number | null;
-  handleService: (index: number) => void;
+  expanded: number | false;
+  setExpanded: Dispatch<SetStateAction<number | false>>;
 }
 
 export const Service: React.FC<ServiceComponentProps> = ({
   index,
   service,
-  activeIndex,
-  handleService,
+  expanded,
+  setExpanded,
 }) => {
+  const isOpen = index === expanded;
+
   return (
-    <ServiceRoot key={index} onClick={() => handleService(index)}>
+    <ServiceRoot onClick={() => setExpanded(isOpen ? false : index)}>
       <div className='heading_wrap'>
-        <h4 className={activeIndex === index ? 'active' : ''}>
+        <h4 className={expanded === index ? 'active' : ''}>
           {index < 9 ? `0${index + 1}` : index + 1}. {service.service_title}
         </h4>
 
         <button
           type='button'
           title={`View ${service.service_title}`}
-          onClick={() => handleService(index)}
-          className={activeIndex === index ? 'active' : ''}
+          onClick={() => setExpanded(isOpen ? false : index)}
+          className={expanded === index ? 'active' : ''}
         >
           <svg
             width='32'
@@ -96,7 +101,7 @@ export const Service: React.FC<ServiceComponentProps> = ({
             <path
               d='M6.66699 16H25.3337'
               stroke={
-                activeIndex === index
+                expanded === index
                   ? myTheme.colors.main.primary100
                   : myTheme.colors.grayScale.black
               }
@@ -107,7 +112,7 @@ export const Service: React.FC<ServiceComponentProps> = ({
             <path
               d='M16 6.66667L25.3333 16L16 25.3333'
               stroke={
-                activeIndex === index
+                expanded === index
                   ? myTheme.colors.main.primary100
                   : myTheme.colors.grayScale.black
               }
@@ -118,9 +123,16 @@ export const Service: React.FC<ServiceComponentProps> = ({
           </svg>
         </button>
       </div>
-      <p className={activeIndex === index ? 'text active' : 'text'}>
-        {service.service_desc}
-      </p>
+      {isOpen && (
+        <motion.p
+          initial='collapsed'
+          animate='open'
+          exit='collapsed'
+          variants={collapse}
+        >
+          {service.service_desc}
+        </motion.p>
+      )}
     </ServiceRoot>
   );
 };

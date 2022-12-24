@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import { ImageProps } from '../../types/global';
 
 const ProjectGalleryRoot = styled.section`
   padding: 1.6rem 0 3.125rem;
@@ -30,39 +31,20 @@ const ProjectGalleryRoot = styled.section`
   }
 `;
 
-export const ProjectGallery: React.FC = () => {
+export const ProjectGallery: React.FC<{ gallery: ImageProps[] }> = ({
+  gallery,
+}) => {
   return (
     <ProjectGalleryRoot>
-      <Image
-        src='/assets/gallery/gallery_1.png'
-        alt='gallery_1'
-        height={513}
-        width={584}
-      />
-      <Image
-        src='/assets/gallery/gallery_2.png'
-        alt='gallery_2'
-        height={513}
-        width={584}
-      />
-      <Image
-        src='/assets/gallery/gallery_3.png'
-        alt='gallery_3'
-        height={513}
-        width={1200}
-      />
-      <Image
-        src='/assets/gallery/gallery_4.png'
-        alt='gallery_4'
-        height={513}
-        width={584}
-      />
-      <Image
-        src='/assets/gallery/gallery_5.png'
-        alt='gallery_5'
-        height={513}
-        width={584}
-      />
+      {gallery.map((image) => (
+        <Image
+          key={image.id}
+          src={image.attributes.url}
+          alt={image.attributes.name}
+          width={image.attributes.width}
+          height={image.attributes.height}
+        />
+      ))}
     </ProjectGalleryRoot>
   );
 };

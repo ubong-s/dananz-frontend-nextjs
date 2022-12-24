@@ -66,8 +66,6 @@ interface MaterialsProps {
 }
 
 export const Materials: React.FC<MaterialsProps> = ({ title, images }) => {
-  console.log(images);
-
   return (
     <MaterialsRoot>
       <SectionHeading heading={title.heading} />
