@@ -6,9 +6,14 @@ import strapiService from '../../lib/api/strapiService';
 import { OurTeamPageProps } from '../../types/our-team';
 
 export default function OurTeamsPage({ data }: { data: OurTeamPageProps }) {
-  const { pageData, members } = data;
-
-  console.log(data);
+  const {
+    pageData: {
+      data: {
+        attributes: { seo, page_header, page_banner, experts_title },
+      },
+    },
+    members,
+  } = data;
 
   return (
     <motion.div
@@ -17,19 +22,13 @@ export default function OurTeamsPage({ data }: { data: OurTeamPageProps }) {
       animate='animate'
       exit='initial'
     >
-      <Seo
-        metaTitle={pageData.data.attributes.seo.metaTitle}
-        metaDescription={pageData.data.attributes.seo.metaDescription}
-      />
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <PageHeader
-        title={pageData.data.attributes.page_header.title}
-        description={pageData.data.attributes.page_header.description}
-        imageURL={pageData.data.attributes.page_banner.data.attributes.url}
+        title={page_header.title}
+        description={page_header.description}
+        imageURL={page_banner.data.attributes.url}
       />
-      <TeamMembers
-        members={members.data}
-        title={pageData.data.attributes.experts_title}
-      />
+      <TeamMembers members={members.data} title={experts_title} />
       <WhyChooseUs />
     </motion.div>
   );

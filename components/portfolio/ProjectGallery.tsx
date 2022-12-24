@@ -36,15 +36,16 @@ export const ProjectGallery: React.FC<{ gallery: ImageProps[] }> = ({
 }) => {
   return (
     <ProjectGalleryRoot>
-      {gallery.map((image) => (
-        <Image
-          key={image.id}
-          src={image.attributes.url}
-          alt={image.attributes.name}
-          width={image.attributes.width}
-          height={image.attributes.height}
-        />
-      ))}
+      {gallery.map((image) => {
+        const {
+          id,
+          attributes: { url, name, width, height },
+        } = image;
+
+        return (
+          <Image key={id} src={url} alt={name} width={width} height={height} />
+        );
+      })}
     </ProjectGalleryRoot>
   );
 };

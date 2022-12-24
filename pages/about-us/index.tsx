@@ -6,6 +6,17 @@ import { AboutpageProps } from '../../types/about';
 import { motion } from 'framer-motion';
 
 export default function AboutUsPage({ data }: { data: AboutpageProps }) {
+  const {
+    attributes: {
+      seo,
+      page_header,
+      banner_image,
+      stats,
+      achievement_title,
+      achievement_image,
+    },
+  } = data;
+
   return (
     <motion.div
       variants={fadeIn}
@@ -13,19 +24,16 @@ export default function AboutUsPage({ data }: { data: AboutpageProps }) {
       animate='animate'
       exit='initial'
     >
-      <Seo
-        metaTitle={data.attributes.seo.metaTitle}
-        metaDescription={data.attributes.seo.metaDescription}
-      />
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <PageHeader
-        title={data.attributes.page_header.title}
-        description={data.attributes.page_header.description}
-        imageURL={data.attributes.banner_image.data.attributes.url}
+        title={page_header.title}
+        description={page_header.description}
+        imageURL={banner_image.data.attributes.url}
       />
       <Achievement
-        stats={data.attributes.stats}
-        title={data.attributes.achievement_title}
-        image={data.attributes.achievement_image.data}
+        stats={stats}
+        title={achievement_title}
+        image={achievement_image.data}
       />
       <WhyChooseUs />
     </motion.div>

@@ -7,7 +7,7 @@ import { ProjectProps } from '../../types/portfolio';
 import { Button } from './Button';
 
 // styles
-const ImageTextLayoutRoot = styled.div`
+const ProjectRoot = styled.div`
   display: grid;
   gap: 1rem;
   margin-bottom: 1rem;
@@ -106,20 +106,18 @@ const TextContent = styled.div`
     }
   }
 `;
-// types
-interface ImageTextLayoutProps {
-  project: ProjectProps;
-}
 
-export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
-  project,
-}) => {
+export const Project: React.FC<{ project: ProjectProps }> = ({ project }) => {
+  const {
+    attributes: { project_banner, project_header, slug },
+  } = project;
+
   return (
-    <ImageTextLayoutRoot>
+    <ProjectRoot>
       <ImageRoot>
         <Image
-          src={project.attributes.project_banner.data.attributes.url}
-          alt={project.attributes.project_banner.data.attributes.name}
+          src={project_banner.data.attributes.url}
+          alt={project_banner.data.attributes.name}
           width={883}
           height={525}
           className='img'
@@ -139,13 +137,13 @@ export const ImageTextLayout: React.FC<ImageTextLayoutProps> = ({
         </div>
       </ImageRoot>
       <TextContent>
-        <h3>{project.attributes.project_header.title}</h3>
-        <p>{project.attributes.project_header.description}</p>
+        <h3>{project_header.title}</h3>
+        <p>{project_header.description}</p>
 
-        <Link href={`/${routes.portfolio}/${project.attributes.slug}`} passHref>
+        <Link href={`/${routes.portfolio}/${slug}`} passHref>
           <Button variant='button'>Learn More</Button>
         </Link>
       </TextContent>
-    </ImageTextLayoutRoot>
+    </ProjectRoot>
   );
 };

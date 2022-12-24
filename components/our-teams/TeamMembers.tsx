@@ -99,20 +99,27 @@ export const TeamMembers: React.FC<TeamMemberProps> = ({ members, title }) => {
       <TeamMembersGrid>
         {members
           .sort((a, b) => a.attributes.index - b.attributes.index)
-          .map((member) => (
-            <TeamMember key={member.id}>
-              <Image
-                src={member.attributes.image.data.attributes.url}
-                alt={member.attributes.name}
-                height={member.attributes.image.data.attributes.height}
-                width={member.attributes.image.data.attributes.width}
-              />
-              <div className='content'>
-                <h4>{member.attributes.name}</h4>
-                <p>{member.attributes.position}</p>
-              </div>
-            </TeamMember>
-          ))}
+          .map((member) => {
+            const {
+              id,
+              attributes: { image, name, position },
+            } = member;
+
+            return (
+              <TeamMember key={id}>
+                <Image
+                  src={image.data.attributes.url}
+                  alt={name}
+                  height={image.data.attributes.height}
+                  width={image.data.attributes.width}
+                />
+                <div className='content'>
+                  <h4>{name}</h4>
+                  <p>{position}</p>
+                </div>
+              </TeamMember>
+            );
+          })}
       </TeamMembersGrid>
     </TeamMembersRoot>
   );

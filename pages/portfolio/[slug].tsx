@@ -1,9 +1,4 @@
-import type {
-  GetServerSidePropsContext,
-  GetStaticPathsContext,
-  GetStaticPropsContext,
-} from 'next';
-import React from 'react';
+import type { GetServerSidePropsContext } from 'next';
 import { ProjectGallery } from '../../components/portfolio/ProjectGallery';
 import { ProjectIntro } from '../../components/portfolio/ProjectIntro';
 import { PageHeader, Seo } from '../../components/_common';
@@ -17,6 +12,17 @@ export default function SinglePortfolio({
 }: {
   project: ProjectProps;
 }) {
+  const {
+    attributes: {
+      seo,
+      project_header,
+      project_banner,
+      project_overview,
+      design_process,
+      gallery,
+    },
+  } = project;
+
   return (
     <motion.div
       variants={fadeIn}
@@ -24,20 +30,17 @@ export default function SinglePortfolio({
       animate='animate'
       exit='initial'
     >
-      <Seo
-        metaTitle={project.attributes.seo.metaTitle}
-        metaDescription={project.attributes.seo.metaDescription}
-      />
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <PageHeader
-        title={project.attributes.project_header.title}
-        description={project.attributes.project_header.description}
-        imageURL={project.attributes.project_banner.data.attributes.url}
+        title={project_header.title}
+        description={project_header.description}
+        imageURL={project_banner.data.attributes.url}
       />
       <ProjectIntro
-        projectOverview={project.attributes.project_overview}
-        designProcess={project.attributes.design_process}
+        projectOverview={project_overview}
+        designProcess={design_process}
       />
-      <ProjectGallery gallery={project.attributes.gallery.data} />
+      <ProjectGallery gallery={gallery.data} />
     </motion.div>
   );
 }

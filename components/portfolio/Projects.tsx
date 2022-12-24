@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
 import { projects } from '../../lib/portfolio/index';
-import { ImageTextLayout } from '../_common/ImageTextLayout';
+import { Project } from '../_common/Project';
 import strapiService from '../../lib/api/strapiService';
 import { ProjectProps } from '../../types/portfolio';
 
@@ -31,7 +31,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
       <ProjectsList>
         {projects.map((project) => {
-          return <ImageTextLayout key={project.id} project={project} />;
+          return <Project key={project.id} project={project} />;
         })}
       </ProjectsList>
     </ProjectsRoot>
