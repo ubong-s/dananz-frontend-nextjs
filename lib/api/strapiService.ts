@@ -27,10 +27,16 @@ const getHomepageData = async () => {
 };
 
 const getAboutpageData = async () => {
-  const response = await fetch(`${baseUrl}/aboutpage?populate=*`);
-  const data = await response.json();
+  const response1 = await fetch(`${baseUrl}/aboutpage?populate=*`).then((res) =>
+    res.json()
+  );
+  const response2 = await fetch(`${baseUrl}/milestones?populate=*`).then(
+    (res) => res.json()
+  );
 
-  return data;
+  const [pageData, milestones] = await Promise.all([response1, response2]);
+
+  return { pageData, milestones };
 };
 
 const getTeampageData = async () => {

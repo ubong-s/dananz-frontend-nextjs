@@ -7,14 +7,18 @@ import { motion } from 'framer-motion';
 
 export default function AboutUsPage({ data }: { data: AboutpageProps }) {
   const {
-    attributes: {
-      seo,
-      page_header,
-      banner_image,
-      stats,
-      achievement_title,
-      achievement_image,
+    pageData: {
+      data: {
+        attributes: {
+          seo,
+          page_header,
+          banner_image,
+          achievement_title,
+          achievement_image,
+        },
+      },
     },
+    milestones,
   } = data;
 
   return (
@@ -31,7 +35,7 @@ export default function AboutUsPage({ data }: { data: AboutpageProps }) {
         imageURL={banner_image.data.attributes.url}
       />
       <Achievement
-        stats={stats}
+        stats={milestones.data}
         title={achievement_title}
         image={achievement_image.data}
       />
@@ -41,11 +45,11 @@ export default function AboutUsPage({ data }: { data: AboutpageProps }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await strapiService.getAboutpageData();
+  const data = await strapiService.getAboutpageData();
 
   return {
     props: {
-      data: response.data,
+      data,
     },
   };
 };
