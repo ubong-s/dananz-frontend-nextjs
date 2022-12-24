@@ -3,6 +3,8 @@ import { SectionHeading } from '../_common';
 import { mediaQueries } from '../../styles';
 import { members } from '../../lib/our-teams/members';
 import Image from 'next/image';
+import { MemberProps } from '../../types/our-team';
+import { SectionHeadingProps } from '../../types/global';
 
 const TeamMembersRoot = styled.section`
   padding: 3.125rem 0;
@@ -80,30 +82,37 @@ const TeamMember = styled.div`
   }
 `;
 
-export const TeamMembers: React.FC = () => {
+interface TeamMemberProps {
+  members: MemberProps[];
+  header: SectionHeadingProps;
+}
+
+export const TeamMembers: React.FC<TeamMemberProps> = ({ members, header }) => {
   return (
     <TeamMembersRoot>
       <SectionHeading
-        heading='Designers'
-        subheading='Our Experts'
-        description='Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.'
-        type='half'
+        heading={header.heading}
+        subheading={header.subheading}
+        description={header.description}
+        type={header.type}
       />
       <TeamMembersGrid>
-        {members.map((member) => (
-          <TeamMember key={member.name}>
-            <Image
-              src={member.image}
-              alt={member.name}
-              height={386}
-              width={282}
-            />
-            <div className='content'>
-              <h4>{member.name}</h4>
-              <p>{member.position}</p>
-            </div>
-          </TeamMember>
-        ))}
+        {members
+          .sort((a, b) => a.attributes.index - b.attributes.index)
+          .map((member) => (
+            <TeamMember key={member.attributes.name}>
+              <Image
+                src={member.attributes.image.data.attributes.url}
+                alt={member.attributes.name}
+                height={member.attributes.image.data.attributes.height}
+                width={member.attributes.image.data.attributes.width}
+              />
+              <div className='content'>
+                <h4>{member.attributes.name}</h4>
+                <p>{member.attributes.position}</p>
+              </div>
+            </TeamMember>
+          ))}
       </TeamMembersGrid>
     </TeamMembersRoot>
   );

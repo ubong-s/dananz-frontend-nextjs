@@ -227,7 +227,7 @@ const bodyStyles = css`
     top: 0;
     left: 0;
     right: 0;
-    height: 10px;
+    height: 7.5px;
     background: ${(props) => props.theme.colors.main.primary100};
     transform-origin: 0%;
     z-index: 1000;

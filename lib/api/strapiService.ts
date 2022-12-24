@@ -17,6 +17,20 @@ const getAboutpageData = async () => {
   return data;
 };
 
+const getTeampageData = async () => {
+  // const response = await fetch(`${baseUrl}/our-team?populate=*`);
+
+  const response1 = await fetch(`${baseUrl}/our-team?populate=*`).then((res) =>
+    res.json()
+  );
+  const response2 = await fetch(`${baseUrl}/team-members?populate=*`).then(
+    (res) => res.json()
+  );
+  const [pageData, members] = await Promise.all([response1, response2]);
+
+  return { pageData, members };
+};
+
 const getProjects = async () => {
   const response = await fetch(`${baseUrl}/projects?populate=*`);
   const data = await response.json();
@@ -34,6 +48,7 @@ const getSingleProject = async (slug: string) => {
 const strapiService = {
   getHomepageData,
   getAboutpageData,
+  getTeampageData,
   getProjects,
   getSingleProject,
 };

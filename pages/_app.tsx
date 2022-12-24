@@ -18,6 +18,11 @@ export default function App({ Component, pageProps }: AppProps) {
     restDelta: 0.001,
   });
 
+  console.log(
+    'Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations.'
+      .length
+  );
+
   return (
     <AnimatePresence mode='wait'>
       <Layout>
