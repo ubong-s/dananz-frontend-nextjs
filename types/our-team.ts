@@ -6,6 +6,7 @@ import {
 } from './global';
 
 export interface MemberProps {
+  id: number;
   attributes: {
     createdAt: string;
     image: { data: ImageProps };
@@ -27,7 +28,6 @@ export interface OurTeamPageProps {
         page_banner: { data: ImageProps };
         page_header: PageHeaderProps;
         experts_title: SectionHeadingProps;
-        why_us_title: SectionHeadingProps;
         seo: SeoProps;
       };
       id: number;

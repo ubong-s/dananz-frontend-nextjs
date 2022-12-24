@@ -2,6 +2,8 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { services } from '../../lib/services';
 import { mediaQueries } from '../../styles';
+import { SectionHeadingProps } from '../../types/global';
+import { ServiceProps } from '../../types/services';
 import { SectionHeading } from '../_common';
 
 const ServicesListRoot = styled.section`
@@ -55,23 +57,38 @@ const ServicesListItem = styled.div`
   }
 `;
 
-export const ServicesList: React.FC = () => {
+// types
+
+interface ServicesListProps {
+  title: SectionHeadingProps;
+  services: ServiceProps[];
+}
+
+export const ServicesList: React.FC<ServicesListProps> = ({
+  title,
+  services,
+}) => {
   return (
     <ServicesListRoot>
-      <SectionHeading heading='What We Do' />
+      <SectionHeading heading={title.heading} />
       <ServicesListing>
         {services.map((service) => {
+          const {
+            id,
+            attributes: { image, title, description },
+          } = service;
+
           return (
-            <ServicesListItem key={service.title}>
+            <ServicesListItem key={id}>
               <Image
-                src={service.image}
-                alt={service.title}
-                width={746}
-                height={365}
+                src={image.data.attributes.url}
+                alt={title}
+                height={image.data.attributes.height}
+                width={image.data.attributes.width}
               />
               <div>
-                <h4>{service.title}</h4>
-                <p>{service.text}</p>
+                <h4>{title}</h4>
+                <p>{description}</p>
               </div>
             </ServicesListItem>
           );

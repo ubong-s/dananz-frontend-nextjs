@@ -32,10 +32,10 @@ export default function HomePage({ data }: { data: HomepageProps }) {
         image={data.attributes.service_image.data}
         services={data.attributes.services}
       />
-      <ProductList
+      {/* <ProductList
         title={data.attributes.product_heading}
         products={data.attributes.products}
-      />
+      /> */}
       <Materials
         title={data.attributes.materials_heading}
         images={data.attributes.material_images.data}

@@ -28,7 +28,7 @@ export default function OurTeamsPage({ data }: { data: OurTeamPageProps }) {
       />
       <TeamMembers
         members={members.data}
-        header={pageData.data.attributes.experts_title}
+        title={pageData.data.attributes.experts_title}
       />
       <WhyChooseUs />
     </motion.div>

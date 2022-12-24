@@ -84,23 +84,23 @@ const TeamMember = styled.div`
 
 interface TeamMemberProps {
   members: MemberProps[];
-  header: SectionHeadingProps;
+  title: SectionHeadingProps;
 }
 
-export const TeamMembers: React.FC<TeamMemberProps> = ({ members, header }) => {
+export const TeamMembers: React.FC<TeamMemberProps> = ({ members, title }) => {
   return (
     <TeamMembersRoot>
       <SectionHeading
-        heading={header.heading}
-        subheading={header.subheading}
-        description={header.description}
-        type={header.type}
+        heading={title.heading}
+        subheading={title.subheading}
+        description={title.description}
+        type={title.type}
       />
       <TeamMembersGrid>
         {members
           .sort((a, b) => a.attributes.index - b.attributes.index)
           .map((member) => (
-            <TeamMember key={member.attributes.name}>
+            <TeamMember key={member.id}>
               <Image
                 src={member.attributes.image.data.attributes.url}
                 alt={member.attributes.name}

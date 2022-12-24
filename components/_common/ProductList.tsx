@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { SectionHeading } from '.';
 import { mediaQueries } from '../../styles';
 import { ProductProps, SectionHeadingProps } from '../../types/global';
+import { ProjectProps } from '../../types/portfolio';
 import { Product } from './Product';
 
 // styles
@@ -21,7 +22,7 @@ const ProductListBottom = styled.div`
 // types
 interface ProductListProps {
   title: SectionHeadingProps;
-  products: ProductProps[];
+  products: ProjectProps[];
 }
 
 export const ProductList: React.FC<ProductListProps> = ({
@@ -37,9 +38,11 @@ export const ProductList: React.FC<ProductListProps> = ({
         type={title.type}
       />
       <ProductListBottom>
-        {products.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+        {products
+          .sort((a, b) => a.id - b.id)
+          .map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
       </ProductListBottom>
     </ProductListRoot>
   );
