@@ -1,22 +1,11 @@
 import {
   ImageProps,
   PageHeaderProps,
+  ProjectProps,
   SectionHeadingProps,
   SeoProps,
+  ServiceProps,
 } from './global';
-import { ProjectProps } from './portfolio';
-
-export interface ServiceProps {
-  id: number;
-  attributes: {
-    createdAt: string;
-    publishedAt: string;
-    updatedAt: string;
-    title: string;
-    description: string;
-    image: { data: ImageProps };
-  };
-}
 
 export interface ServicesPageProps {
   pageData: {

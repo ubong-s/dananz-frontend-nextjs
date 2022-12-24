@@ -1,7 +1,7 @@
 import { Projects } from '../../components/portfolio/Projects';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
-import { ProjectProps } from '../../types/portfolio';
+import { ProjectProps } from '../../types/global';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../lib/animations';
 

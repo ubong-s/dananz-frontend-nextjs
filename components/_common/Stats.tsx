@@ -57,7 +57,10 @@ interface StatCompProps {
   stats: StatProps[];
 }
 
-const Stat: React.FC<StatProps> = ({ id, count, text }) => {
+const Stat: React.FC<{
+  text: string;
+  count: number;
+}> = ({ count, text }) => {
   return (
     <StatRoot>
       {count}+ <span>{text}</span>
@@ -69,7 +72,11 @@ export const Stats: React.FC<StatCompProps> = ({ stats }) => {
   return (
     <StatsRoot>
       {stats.map((stat) => (
-        <Stat key={stat.id} count={stat.count} text={stat.text} />
+        <Stat
+          key={stat.id}
+          count={stat.attributes.count}
+          text={stat.attributes.text}
+        />
       ))}
     </StatsRoot>
   );

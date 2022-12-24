@@ -4,10 +4,26 @@ const baseUrl =
     : process.env.NEXT_PUBLIC_STRAPI_URL;
 
 const getHomepageData = async () => {
-  const response = await fetch(`${baseUrl}/homepage?populate=*`);
-  const data = await response.json();
+  const response1 = await fetch(`${baseUrl}/homepage?populate=*`).then((res) =>
+    res.json()
+  );
+  const response2 = await fetch(`${baseUrl}/services?populate=*`).then((res) =>
+    res.json()
+  );
+  const response3 = await fetch(`${baseUrl}/projects?populate=*`).then((res) =>
+    res.json()
+  );
+  const response4 = await fetch(`${baseUrl}/milestones?populate=*`).then(
+    (res) => res.json()
+  );
+  const [pageData, services, projects, milestones] = await Promise.all([
+    response1,
+    response2,
+    response3,
+    response4,
+  ]);
 
-  return data;
+  return { pageData, services, projects, milestones };
 };
 
 const getAboutpageData = async () => {
@@ -18,8 +34,6 @@ const getAboutpageData = async () => {
 };
 
 const getTeampageData = async () => {
-  // const response = await fetch(`${baseUrl}/our-team?populate=*`);
-
   const response1 = await fetch(`${baseUrl}/our-team?populate=*`).then((res) =>
     res.json()
   );
@@ -64,6 +78,13 @@ const getSingleProject = async (slug: string) => {
   return data;
 };
 
+const getLocations = async () => {
+  const response = await fetch(`${baseUrl}/locations?populate=*`);
+  const data = await response.json();
+
+  return data;
+};
+
 const strapiService = {
   getHomepageData,
   getAboutpageData,
@@ -71,6 +92,7 @@ const strapiService = {
   getServicespageData,
   getProjects,
   getSingleProject,
+  getLocations,
 };
 
 export default strapiService;

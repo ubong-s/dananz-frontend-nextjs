@@ -76,17 +76,19 @@ export const Services: React.FC<ServicesProps> = ({
         />
 
         <div className='services'>
-          {services.map((service, index) => {
-            return (
-              <Service
-                index={index}
-                key={service.id}
-                service={service}
-                expanded={expanded}
-                setExpanded={setExpanded}
-              />
-            );
-          })}
+          {services
+            .sort((a, b) => a.id - b.id)
+            .map((service, index) => {
+              return (
+                <Service
+                  index={index}
+                  key={service.id}
+                  service={service}
+                  expanded={expanded}
+                  setExpanded={setExpanded}
+                />
+              );
+            })}
         </div>
       </ServicesTop>
       <ServicesBottom>

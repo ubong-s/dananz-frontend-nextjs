@@ -1,6 +1,6 @@
 import {
   ImageProps,
-  ProductProps,
+  ProjectProps,
   SectionHeadingProps,
   SeoProps,
   ServiceProps,
@@ -8,26 +8,30 @@ import {
 } from './global';
 
 export interface HomepageProps {
-  id: number;
-  attributes: {
-    hero_image: { data: ImageProps };
-    hero_title: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    about_text: string;
-    about_image: { data: ImageProps };
-    about_heading: SectionHeadingProps;
-    services_heading: SectionHeadingProps;
-    services: ServiceProps[];
-    service_image: { data: ImageProps };
-    product_heading: SectionHeadingProps;
-    products: ProductProps[];
-    materials_heading: SectionHeadingProps;
-    material_images: {
-      data: ImageProps[];
+  pageData: {
+    data: {
+      id: number;
+      attributes: {
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        hero_image: { data: ImageProps };
+        hero_title: string;
+        about_heading: SectionHeadingProps;
+        about_text: string;
+        about_image: { data: ImageProps };
+        services_heading: SectionHeadingProps;
+        service_image: { data: ImageProps };
+        product_heading: SectionHeadingProps;
+        materials_heading: SectionHeadingProps;
+        material_images: {
+          data: ImageProps[];
+        };
+        seo: SeoProps;
+      };
     };
-    stats: StatProps[];
-    seo: SeoProps;
   };
+  milestones: { data: StatProps[] };
+  services: { data: ServiceProps[] };
+  projects: { data: ProjectProps[] };
 }

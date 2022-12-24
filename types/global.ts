@@ -13,17 +13,37 @@ interface ImageFormatProps {
     resource_type: string;
   };
 }
-
-export interface ProductProps {
+export interface ProjectProps {
   id: number;
-  product_heading: string;
-  product_desc: string;
+  attributes: {
+    title: string;
+    project_overview: string;
+    design_process: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    slug: string;
+    gallery: {
+      data: ImageProps[];
+    };
+    project_header: PageHeaderProps;
+    project_banner: {
+      data: ImageProps;
+    };
+    seo: SeoProps;
+  };
 }
 
 export interface ServiceProps {
   id: number;
-  service_title: string;
-  service_desc: string;
+  attributes: {
+    createdAt: string;
+    publishedAt: string;
+    updatedAt: string;
+    title: string;
+    description: string;
+    image: { data: ImageProps };
+  };
 }
 
 export interface SectionHeadingProps {
@@ -64,9 +84,11 @@ export interface ImageProps {
 }
 
 export interface StatProps {
-  id?: number;
-  text: string;
-  count: number;
+  id: number;
+  attributes: {
+    text: string;
+    count: number;
+  };
 }
 
 export interface SeoProps {

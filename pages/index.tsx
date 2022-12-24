@@ -6,6 +6,29 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../lib/animations';
 
 export default function HomePage({ data }: { data: HomepageProps }) {
+  const {
+    pageData: {
+      data: {
+        attributes: {
+          seo,
+          hero_title,
+          hero_image,
+          about_heading,
+          about_image,
+          about_text,
+          services_heading,
+          service_image,
+          product_heading,
+          materials_heading,
+          material_images,
+        },
+      },
+    },
+    milestones,
+    projects,
+    services,
+  } = data;
+
   return (
     <motion.div
       variants={fadeIn}
@@ -13,43 +36,34 @@ export default function HomePage({ data }: { data: HomepageProps }) {
       animate='animate'
       exit='initial'
     >
-      <Seo
-        metaTitle={data.attributes.seo.metaTitle}
-        metaDescription={data.attributes.seo.metaDescription}
-      />
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <Hero
-        title={data.attributes?.hero_title}
-        image={data.attributes?.hero_image.data}
-        stats={data.attributes.stats}
+        title={hero_title}
+        image={hero_image.data}
+        stats={milestones.data}
       />
       <About
-        title={data.attributes.about_heading}
-        image={data.attributes.about_image.data}
-        content={data.attributes.about_text}
+        title={about_heading}
+        image={about_image.data}
+        content={about_text}
       />
       <Services
-        title={data.attributes.services_heading}
-        image={data.attributes.service_image.data}
-        services={data.attributes.services}
+        title={services_heading}
+        image={service_image.data}
+        services={services.data}
       />
-      {/* <ProductList
-        title={data.attributes.product_heading}
-        products={data.attributes.products}
-      /> */}
-      <Materials
-        title={data.attributes.materials_heading}
-        images={data.attributes.material_images.data}
-      />
+      <ProductList title={product_heading} products={projects.data} />
+      <Materials title={materials_heading} images={material_images.data} />
     </motion.div>
   );
 }
 
 export const getStaticProps = async () => {
-  const response = await strapiService.getHomepageData();
+  const data = await strapiService.getHomepageData();
 
   return {
     props: {
-      data: response.data,
+      data,
     },
   };
 };

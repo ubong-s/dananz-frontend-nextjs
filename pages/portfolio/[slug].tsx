@@ -3,7 +3,7 @@ import { ProjectGallery } from '../../components/portfolio/ProjectGallery';
 import { ProjectIntro } from '../../components/portfolio/ProjectIntro';
 import { PageHeader, Seo } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
-import { ProjectProps } from '../../types/portfolio';
+import { ProjectProps } from '../../types/global';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../lib/animations';
 

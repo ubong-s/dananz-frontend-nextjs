@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
+import { Location } from '../../types/contact';
 import { SectionHeading } from '../_common';
 
 const LocationsRoot = styled.section`
@@ -57,7 +58,9 @@ const LocationsGrid = styled.div`
   }
 `;
 
-export const Locations: React.FC = () => {
+export const Locations: React.FC<{ locations: Location[] }> = ({
+  locations,
+}) => {
   return (
     <LocationsRoot>
       <SectionHeading
@@ -81,38 +84,19 @@ export const Locations: React.FC = () => {
         </LocationsInfo>
 
         <LocationsGrid>
-          <div>
-            <h4>Jakarta</h4>
-            <p>
-              Customize your interior design into a dream place with the best
-              designers and quality furniture. We try our best to fulfill your
-              expectations.
-            </p>
-          </div>
-          <div>
-            <h4>Surakarta</h4>
-            <p>
-              Customize your interior design into a dream place with the best
-              designers and quality furniture. We try our best to fulfill your
-              expectations.
-            </p>
-          </div>
-          <div>
-            <h4>Yogyakarta</h4>
-            <p>
-              Customize your interior design into a dream place with the best
-              designers and quality furniture. We try our best to fulfill your
-              expectations.
-            </p>
-          </div>
-          <div>
-            <h4>Bandung</h4>
-            <p>
-              Customize your interior design into a dream place with the best
-              designers and quality furniture. We try our best to fulfill your
-              expectations.
-            </p>
-          </div>
+          {locations.map((location) => {
+            const {
+              id,
+              attributes: { name, description },
+            } = location;
+
+            return (
+              <div key={id}>
+                <h4>{name}</h4>
+                <p>{description}</p>
+              </div>
+            );
+          })}
         </LocationsGrid>
       </LocationsBody>
     </LocationsRoot>

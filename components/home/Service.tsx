@@ -78,16 +78,20 @@ export const Service: React.FC<ServiceComponentProps> = ({
 }) => {
   const isOpen = index === expanded;
 
+  const {
+    attributes: { title, description },
+  } = service;
+
   return (
     <ServiceRoot onClick={() => setExpanded(isOpen ? false : index)}>
       <div className='heading_wrap'>
         <h4 className={expanded === index ? 'active' : ''}>
-          {index < 9 ? `0${index + 1}` : index + 1}. {service.service_title}
+          {index < 9 ? `0${index + 1}` : index + 1}. {title}
         </h4>
 
         <button
           type='button'
-          title={`View ${service.service_title}`}
+          title={`View ${title}`}
           onClick={() => setExpanded(isOpen ? false : index)}
           className={expanded === index ? 'active' : ''}
         >
@@ -130,7 +134,7 @@ export const Service: React.FC<ServiceComponentProps> = ({
           exit='collapsed'
           variants={collapse}
         >
-          {service.service_desc}
+          {description}
         </motion.p>
       )}
     </ServiceRoot>
