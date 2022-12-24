@@ -10,6 +10,7 @@ import { Button } from './Button';
 const ImageTextLayoutRoot = styled.div`
   display: grid;
   gap: 1rem;
+  margin-bottom: 1rem;
 
   .profile {
     position: absolute;
@@ -67,7 +68,6 @@ const ImageTextLayoutRoot = styled.div`
 
 const ImageRoot = styled.div`
   position: relative;
-  grid-area: image;
 
   .img {
     height: 300px;
@@ -75,6 +75,7 @@ const ImageRoot = styled.div`
   }
 
   ${mediaQueries.desktop} {
+    grid-area: image;
     .img {
       height: 525px;
     }
@@ -82,8 +83,6 @@ const ImageRoot = styled.div`
 `;
 
 const TextContent = styled.div`
-  grid-area: content;
-
   h3 {
     font-size: 1.25rem;
   }
@@ -93,6 +92,7 @@ const TextContent = styled.div`
   }
 
   ${mediaQueries.desktop} {
+    grid-area: content;
     h3 {
       font-size: 1.5rem;
     }

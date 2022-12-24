@@ -8,17 +8,12 @@ const LayoutRoot = styled.div`
   min-height: 100vh;
 `;
 
-export const Layout = ({
-  children,
-  style,
-}: {
-  children: React.ReactNode;
-  style: any;
-}) => {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={myTheme}>
       <LayoutRoot>
         <GlobalStyle />
+
         <Nav />
         <Container>
           <main>{children}</main>
