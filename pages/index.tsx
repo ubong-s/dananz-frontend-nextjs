@@ -1,9 +1,9 @@
+import { motion } from 'framer-motion';
 import { About, Hero, Materials, Services } from '../components/home';
 import { Seo, ProductList } from '../components/_common';
 import { HomepageProps } from '../types/home';
-import strapiService from '../lib/api/strapiService';
-import { motion } from 'framer-motion';
 import { fadeIn } from '../lib/animations';
+import strapiService from '../lib/api/strapiService';
 
 export default function HomePage({ data }: { data: HomepageProps }) {
   const {

@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { mediaQueries, misc, myTheme } from '../../styles';
 import { ServiceProps } from '../../types/global';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { collapse } from '../../lib/animations';
 
 const ServiceRoot = styled(motion.article)`

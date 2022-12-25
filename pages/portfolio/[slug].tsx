@@ -1,6 +1,5 @@
 import type { GetServerSidePropsContext } from 'next';
-import { ProjectGallery } from '../../components/portfolio/ProjectGallery';
-import { ProjectIntro } from '../../components/portfolio/ProjectIntro';
+import { ProjectGallery, ProjectIntro } from '../../components/portfolio';
 import { PageHeader, Seo } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
 import { ProjectProps } from '../../types/global';

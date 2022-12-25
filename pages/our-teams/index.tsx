@@ -1,4 +1,4 @@
-import { TeamMembers } from '../../components/our-teams/TeamMembers';
+import { TeamMembers } from '../../components/our-teams';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../lib/animations';

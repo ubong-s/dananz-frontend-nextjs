@@ -1,4 +1,4 @@
-import { ServicesList } from '../../components/services/ServicesList';
+import { ServicesList } from '../../components/services';
 import { PageHeader, ProductList, Seo } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
 import { motion } from 'framer-motion';

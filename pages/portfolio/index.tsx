@@ -1,4 +1,4 @@
-import { Projects } from '../../components/portfolio/Projects';
+import { Projects } from '../../components/portfolio/';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
 import { ProjectProps } from '../../types/global';

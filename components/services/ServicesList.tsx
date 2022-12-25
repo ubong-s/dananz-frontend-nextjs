@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { services } from '../../lib/services';
 import { mediaQueries } from '../../styles';
 import { SectionHeadingProps, ServiceProps } from '../../types/global';
 import { SectionHeading } from '../_common';

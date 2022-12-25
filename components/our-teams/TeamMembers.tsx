@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { SectionHeading } from '../_common';
 import { mediaQueries } from '../../styles';
-import { members } from '../../lib/our-teams/members';
 import Image from 'next/image';
 import { MemberProps } from '../../types/our-team';
 import { SectionHeadingProps } from '../../types/global';
