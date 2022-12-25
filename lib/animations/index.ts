@@ -1,6 +1,38 @@
+import { Variants } from 'framer-motion';
+
 const easing = [0.6, -0.05, 0.01, 0.99];
 
-export const fadeIn = {
+export const containerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+    rotate: 60,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      delay: 0.7,
+      duration: 0.2,
+      when: 'beforeChildren',
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+export const fadeIn: Variants = {
   initial: {
     opacity: 0,
     transition: {
@@ -17,7 +49,7 @@ export const fadeIn = {
   },
 };
 
-export const fadeInUp = {
+export const fadeInUp: Variants = {
   initial: {
     y: 60,
     opacity: 0,
@@ -32,7 +64,7 @@ export const fadeInUp = {
   },
 };
 
-export const fadeInDown = {
+export const fadeInDown: Variants = {
   initial: {
     y: -60,
     opacity: 0,
@@ -47,7 +79,7 @@ export const fadeInDown = {
   },
 };
 
-export const collapse = {
+export const collapse: Variants = {
   open: {
     opacity: 1,
     height: 'auto',
@@ -60,7 +92,7 @@ export const collapse = {
   },
 };
 
-export const stagger = {
+export const stagger: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.5,

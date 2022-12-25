@@ -9,7 +9,7 @@ interface SeoProps {
 export const Seo: React.FC<SeoProps> = ({ metaTitle, metaDescription }) => {
   return (
     <Head>
-      <title>{metaTitle} - Dananz Interior</title>
+      <title>{`${metaTitle} - Dananz Interior`}</title>
       <meta name='description' content={metaDescription} />
     </Head>
   );
