@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { mediaQueries } from '../../styles';
 import { SectionHeading } from '../_common';
-import { projects } from '../../lib/portfolio/index';
 import { Project } from '../_common/Project';
-import strapiService from '../../lib/api/strapiService';
-import { ProjectProps } from '../../types/portfolio';
+import { ProjectProps } from '../../types/global';
 
 const ProjectsRoot = styled.section`
   padding: 3.125rem 0;

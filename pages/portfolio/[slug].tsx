@@ -1,4 +1,4 @@
-import type { GetServerSidePropsContext } from 'next';
+import type { GetStaticPropsContext } from 'next';
 import { ProjectGallery, ProjectIntro } from '../../components/portfolio';
 import { PageHeader, Seo } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
@@ -44,9 +44,19 @@ export default function SinglePortfolio({
   );
 }
 
-export const getServerSideProps = async ({
+export const getStaticPaths = async () => {
+  const response = await strapiService.getProjects();
+
+  const paths = response.data.map((project: ProjectProps) => ({
+    params: { slug: project.attributes.slug },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async ({
   params,
-}: GetServerSidePropsContext<{ slug: string }>) => {
+}: GetStaticPropsContext<{ slug: string }>) => {
   const { slug } = params as { slug: string };
   const response = await strapiService.getSingleProject(slug);
 

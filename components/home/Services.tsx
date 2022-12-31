@@ -77,7 +77,7 @@ export const Services: React.FC<ServicesProps> = ({
 
         <div className='services'>
           {services
-            .sort((a, b) => a.id - b.id)
+            ?.sort((a, b) => a.id - b.id)
             .map((service, index) => {
               return (
                 <Service

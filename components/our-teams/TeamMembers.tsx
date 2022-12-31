@@ -97,7 +97,7 @@ export const TeamMembers: React.FC<TeamMemberProps> = ({ members, title }) => {
       />
       <TeamMembersGrid>
         {members
-          .sort((a, b) => a.attributes.index - b.attributes.index)
+          ?.sort((a, b) => a.attributes.index - b.attributes.index)
           .map((member) => {
             const {
               id,

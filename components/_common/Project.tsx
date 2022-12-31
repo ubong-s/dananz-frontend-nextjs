@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { routes } from '../../lib/routes/routes';
 import { mediaQueries, misc } from '../../styles';
-import { ProjectProps } from '../../types/portfolio';
+import { ProjectProps } from '../../types/global';
 import { Button } from './Button';
 
 // styles

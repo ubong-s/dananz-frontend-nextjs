@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { SectionHeading } from '.';
 import { mediaQueries } from '../../styles';
-import { ProductProps, SectionHeadingProps } from '../../types/global';
-import { ProjectProps } from '../../types/portfolio';
+import { SectionHeadingProps, ProjectProps } from '../../types/global';
 import { Product } from './Product';
 
 // styles
@@ -39,7 +38,7 @@ export const ProductList: React.FC<ProductListProps> = ({
       />
       <ProductListBottom>
         {products
-          .sort((a, b) => a.id - b.id)
+          ?.sort((a, b) => a.id - b.id)
           .map((product) => (
             <Product key={product.id} product={product} />
           ))}

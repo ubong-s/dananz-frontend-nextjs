@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { typography, mediaQueries } from '../../styles';
-import { ProductProps } from '../../types/global';
-import { ProjectProps } from '../../types/portfolio';
+import { ProjectProps } from '../../types/global';
 
 // styles
 const ProductRoot = styled.div`
