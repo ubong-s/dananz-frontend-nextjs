@@ -25,9 +25,7 @@ const bodyStyles = css`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    border-radius: 10px;
-    /* outline: 1px solid slategrey; */
+    background-color: ${(props) => props.theme.colors.main.primary100};
   }
 
   ${mediaQueries.tablet} {
