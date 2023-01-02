@@ -1,28 +1,10 @@
-import styled from 'styled-components';
-import { mediaQueries } from '../../styles';
-import { SectionHeading } from '../_common';
-import { Project } from '../_common/Project';
+import { Project, SectionHeading } from '../_common/';
 import { ProjectProps } from '../../types/global';
+import { ProjectsList, ProjectsRoot } from '../../styles/components/portfolio';
 
-const ProjectsRoot = styled.section`
-  padding: 3.125rem 0;
-
-  ${mediaQueries.desktop} {
-    padding: 5rem 0;
-  }
-`;
-
-const ProjectsList = styled.div`
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-`;
-
-interface ProjectsProps {
-  projects: ProjectProps[];
-}
-
-export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+export const Projects: React.FC<{ projects: ProjectProps[] }> = ({
+  projects,
+}) => {
   return (
     <ProjectsRoot>
       <SectionHeading heading='Projects' />

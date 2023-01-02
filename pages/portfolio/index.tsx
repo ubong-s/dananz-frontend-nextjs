@@ -1,15 +1,21 @@
 import { Projects } from '../../components/portfolio/';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
 import strapiService from '../../lib/api/strapiService';
-import { ProjectProps } from '../../types/global';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../lib/animations';
+import { PortfolioPageProps } from '../../types/portfolio';
 
-export default function PortfolioPage({
-  projects,
-}: {
-  projects: ProjectProps[];
-}) {
+export default function PortfolioPage({ data }: { data: PortfolioPageProps }) {
+  console.log(data);
+
+  const {
+    pageData: {
+      data: {
+        attributes: { seo, page_header, page_banner },
+      },
+    },
+    projects,
+  } = data;
   return (
     <motion.div
       variants={fadeIn}
@@ -17,27 +23,24 @@ export default function PortfolioPage({
       animate='animate'
       exit='initial'
     >
-      <Seo
-        metaTitle='Portofolio'
-        metaDescription='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-      />
+      <Seo metaTitle={seo.metaTitle} metaDescription={seo.metaDescription} />
       <PageHeader
-        title='Portofolio'
-        description='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-        imageURL='/assets/headers/portfolio-header.png'
+        title={page_header.title}
+        description={page_header.description}
+        imageURL={page_banner.data.attributes.url}
       />
-      <Projects projects={projects} />
+      <Projects projects={projects.data} />
       <WhyChooseUs />
     </motion.div>
   );
 }
 
 export const getStaticProps = async () => {
-  const response = await strapiService.getProjects();
+  const data = await strapiService.getProjectspageData();
 
   return {
     props: {
-      projects: response.data,
+      data,
     },
   };
 };

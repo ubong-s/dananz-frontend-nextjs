@@ -14,7 +14,6 @@ export default function OurTeamsPage({ data }: { data: OurTeamPageProps }) {
     },
     members,
   } = data;
-  console.log(members);
 
   return (
     <motion.div

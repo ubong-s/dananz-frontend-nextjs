@@ -79,6 +79,20 @@ const getProjects = async () => {
   return data;
 };
 
+const getProjectspageData = async () => {
+  const response1 = await fetch(`${baseUrl}/projectspage?populate=*`).then(
+    (res) => res.json()
+  );
+
+  const response2 = await fetch(`${baseUrl}/projects?populate=*`).then((res) =>
+    res.json()
+  );
+
+  const [pageData, projects] = await Promise.all([response1, response2]);
+
+  return { pageData, projects };
+};
+
 const getSingleProject = async (slug: string) => {
   const response = await fetch(`${baseUrl}/projects/slug/${slug}?populate=*`);
   const data = await response.json();
@@ -98,6 +112,7 @@ const strapiService = {
   getAboutpageData,
   getTeampageData,
   getServicespageData,
+  getProjectspageData,
   getProjects,
   getSingleProject,
   getLocations,
