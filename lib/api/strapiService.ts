@@ -43,10 +43,12 @@ const getTeampageData = async () => {
   const response1 = await fetch(`${baseUrl}/our-team?populate=*`).then((res) =>
     res.json()
   );
-  const response2 = await fetch(`${baseUrl}/team-projects?populate=*`).then(
+  const response2 = await fetch(`${baseUrl}/team-members?populate=*`).then(
     (res) => res.json()
   );
   const [pageData, members] = await Promise.all([response1, response2]);
+
+  console.log(pageData, members);
 
   return { pageData, members };
 };

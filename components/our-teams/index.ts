@@ -1,3 +1,1 @@
-import { TeamMembers } from './TeamMembers';
-
-export { TeamMembers };
+export { TeamMembers } from './TeamMembers';
