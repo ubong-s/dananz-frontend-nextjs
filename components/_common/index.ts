@@ -1,25 +1,12 @@
-import { Button } from './Button';
-import { Container } from './Container';
-import { Project } from './Project';
-import { Layout } from './Layout';
-import { Logo } from './Logo';
-import { PageHeader } from './PageHeader';
-import { ProductList } from './ProductList';
-import { SectionHeading } from './SectionHeading';
-import { Seo } from './Seo';
-import { Stats } from './Stats';
-import { WhyChooseUs } from './WhyChooseUs';
-
-export {
-  Button,
-  Container,
-  Project,
-  Layout,
-  Logo,
-  PageHeader,
-  ProductList,
-  SectionHeading,
-  Seo,
-  Stats,
-  WhyChooseUs,
-};
+export { Button } from './Button';
+export { Container } from './Container';
+export { Project } from './Project';
+export { Layout } from './Layout';
+export { Logo } from './Logo';
+export { PageHeader } from './PageHeader';
+export { ProductList } from './ProductList';
+export { SectionHeading } from './SectionHeading';
+export { Seo } from './Seo';
+export { Stats } from './Stats';
+export { WhyChooseUs } from './WhyChooseUs';
+export { CloudinaryImage } from './CloudinaryImage';

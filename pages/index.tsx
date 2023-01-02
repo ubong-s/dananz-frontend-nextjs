@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { About, Hero, Materials, Services } from '../components/home';
+import { About, Hero, Materials, Services } from '../components';
 import { Seo, ProductList } from '../components/_common';
 import { HomepageProps } from '../types/home';
 import { fadeIn } from '../lib/animations';
