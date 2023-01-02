@@ -17,8 +17,6 @@ interface CloudinaryImageProps {
   quality?: number;
 }
 
-const normalizeSrc = (src: string) => (src[0] === '/' ? src.slice(1) : src);
-
 export function cloudinaryLoader({
   src,
   width,

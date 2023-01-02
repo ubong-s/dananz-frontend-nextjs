@@ -5,7 +5,7 @@ import {
   MaterialsContentLeft,
   MaterialsContentRight,
   MaterialsRoot,
-} from '../../styles/components';
+} from '../../styles/components/home';
 
 interface MaterialsProps {
   title: SectionHeadingProps;

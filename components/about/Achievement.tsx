@@ -1,49 +1,15 @@
-import Image from 'next/image';
-import styled from 'styled-components';
-import { mediaQueries } from '../../styles';
 import { ImageProps, SectionHeadingProps, StatProps } from '../../types/global';
-import { SectionHeading, Stats } from '../_common';
+import { SectionHeading, Stats, CloudinaryImage } from '../_common';
+import {
+  AchievementBottom,
+  AchievementRoot,
+} from '../../styles/components/about';
 
-const AchievementRoot = styled.section`
-  padding: 3.125rem 0;
-
-  ${mediaQueries.desktop} {
-    padding: 5rem 0;
-  }
-`;
-
-const AchievementBottom = styled.div`
-  display: grid;
-  gap: 1rem;
-
-  img {
-    height: 300px;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  ${mediaQueries.desktop} {
-    grid-template-columns: 3.5fr 1fr;
-    gap: 3rem;
-
-    img {
-      height: 100%;
-    }
-  }
-`;
-
-// types
-interface AchievementProps {
+export const Achievement: React.FC<{
   stats: StatProps[];
   title: SectionHeadingProps;
   image: ImageProps;
-}
-
-export const Achievement: React.FC<AchievementProps> = ({
-  stats,
-  title,
-  image,
-}) => {
+}> = ({ stats, title, image }) => {
   return (
     <AchievementRoot>
       <SectionHeading
@@ -52,7 +18,7 @@ export const Achievement: React.FC<AchievementProps> = ({
         type={title.type}
       />
       <AchievementBottom>
-        <Image
+        <CloudinaryImage
           src={image.attributes.url}
           alt={image.attributes.name}
           width={image.attributes.width}

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { myTheme } from '../../styles';
-import { ServiceRoot } from '../../styles/components';
+import { ServiceRoot } from '../../styles/components/home';
 import { ServiceProps } from '../../types/global';
 import { motion } from 'framer-motion';
 import { collapse } from '../../lib/animations';

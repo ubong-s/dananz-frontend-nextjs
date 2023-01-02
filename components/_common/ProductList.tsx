@@ -1,33 +1,15 @@
-import styled from 'styled-components';
 import { SectionHeading } from '.';
-import { mediaQueries } from '../../styles';
+import {
+  ProductListBottom,
+  ProductListRoot,
+} from '../../styles/components/_common';
 import { SectionHeadingProps, ProjectProps } from '../../types/global';
-import { Product } from './Product';
+import { Product } from '.';
 
-// styles
-const ProductListRoot = styled.section`
-  padding: 3.125rem 0;
-
-  ${mediaQueries.desktop} {
-    padding: 4.7rem 0;
-  }
-`;
-
-const ProductListBottom = styled.div`
-  display: grid;
-  gap: 2.8rem;
-`;
-
-// types
-interface ProductListProps {
+export const ProductList: React.FC<{
   title: SectionHeadingProps;
   products: ProjectProps[];
-}
-
-export const ProductList: React.FC<ProductListProps> = ({
-  title,
-  products,
-}) => {
+}> = ({ title, products }) => {
   return (
     <ProductListRoot>
       <SectionHeading

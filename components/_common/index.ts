@@ -1,5 +1,6 @@
 export { Button } from './Button';
 export { Container } from './Container';
+export { Product } from './Product';
 export { Project } from './Project';
 export { Layout } from './Layout';
 export { Logo } from './Logo';

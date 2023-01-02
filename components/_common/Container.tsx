@@ -1,17 +1,7 @@
-import styled from 'styled-components';
+import { ContainerRoot } from '../../styles/components/_common';
 
-// styles
-const ContainerRoot = styled.div`
-  width: 90%;
-  margin: auto;
-  max-width: 1200px;
-`;
-
-// types
-interface ContainerProps {
+export const Container: React.FC<{
   children: React.ReactNode;
-}
-
-export const Container: React.FC<ContainerProps> = ({ children }) => {
+}> = ({ children }) => {
   return <ContainerRoot>{children}</ContainerRoot>;
 };

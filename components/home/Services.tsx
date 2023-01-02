@@ -3,7 +3,7 @@ import {
   ServicesRoot,
   ServicesTop,
   ServicesBottom,
-} from '../../styles/components';
+} from '../../styles/components/home';
 import { CloudinaryImage, SectionHeading } from '../_common';
 import { Service } from './Service';
 import {

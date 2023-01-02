@@ -1,4 +1,4 @@
-import { HeroRoot, HeroStats, HeroTop } from '../../styles/components';
+import { HeroRoot, HeroStats, HeroTop } from '../../styles/components/home';
 import { ImageProps, StatProps } from '../../types/global';
 import { Stats, CloudinaryImage } from '../_common';
 

@@ -107,3 +107,8 @@ export interface PageHeaderProps {
   title: string;
   description: string;
 }
+
+export interface ButtonProps {
+  variant: 'nav' | 'button' | 'button-alt';
+  children?: React.ReactElement | string;
+}

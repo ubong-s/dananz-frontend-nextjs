@@ -6,7 +6,7 @@ import {
   AboutContent,
   AboutImage,
   AboutRoot,
-} from '../../styles/components';
+} from '../../styles/components/home';
 import { SectionHeadingProps, ImageProps } from '../../types/global';
 import { Button, SectionHeading, CloudinaryImage } from '../_common';
 
@@ -35,12 +35,7 @@ export const About: React.FC<AboutProps> = ({ title, image, content }) => {
             className='img'
           />
           <div className='profile'>
-            <img
-              src='/assets/arga_danaan.png'
-              alt='About'
-              width={51}
-              height={51}
-            />
+            <img src='/assets/arga_danaan.png' alt='About' />
             <span>
               <h4>Arga Danaan</h4>
               <p>CEO of Dananz</p>

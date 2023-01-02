@@ -1,42 +1,9 @@
-import Image from 'next/image';
-import styled from 'styled-components';
-import { mediaQueries, misc } from '../../styles';
 import { SectionHeading } from '.';
-
-// styles
-const WhyChooseUsRoot = styled.section`
-  padding: 3.125rem 0;
-
-  ${mediaQueries.desktop} {
-    padding: 5.6rem 0;
-  }
-`;
-
-const WhyChooseUsGrid = styled.div`
-  display: grid;
-  gap: 1rem;
-  margin-top: 2.5rem;
-
-  ${mediaQueries.desktop} {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-const WhyChooseUsGridItem = styled.div`
-  text-align: center;
-  padding: 1.7rem;
-  box-shadow: ${misc.shadowAlt};
-
-  h4 {
-    padding: 0.625rem 0;
-  }
-
-  ${mediaQueries.desktop} {
-    h4 {
-      font-size: 1rem;
-    }
-  }
-`;
+import {
+  WhyChooseUsGrid,
+  WhyChooseUsGridItem,
+  WhyChooseUsRoot,
+} from '../../styles/components/_common';
 
 // types
 export const WhyChooseUs: React.FC = () => {
@@ -74,12 +41,7 @@ export const WhyChooseUs: React.FC = () => {
       <WhyChooseUsGrid>
         {whyList.map((item) => (
           <WhyChooseUsGridItem key={item.id}>
-            <Image
-              src='/assets/arga_danaan.png'
-              alt={item.title}
-              width={63}
-              height={63}
-            />
+            <img src='/assets/arga_danaan.png' alt={item.title} />
             <h4>{item.title}</h4>
             <p>{item.desc}</p>
           </WhyChooseUsGridItem>
