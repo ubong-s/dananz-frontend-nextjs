@@ -2,12 +2,19 @@ import Head from 'next/head';
 
 export const Seo: React.FC<{
   metaTitle: string;
-  metaDescription: string;
+  metaDescription?: string;
 }> = ({ metaTitle, metaDescription }) => {
   return (
     <Head>
       <title>{`${metaTitle} - Dananz Interior`}</title>
-      <meta name='description' content={metaDescription} />
+      <meta
+        name='description'
+        content={
+          metaDescription
+            ? metaDescription
+            : 'Design your interior with high quality'
+        }
+      />
     </Head>
   );
 };
