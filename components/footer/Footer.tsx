@@ -1,17 +1,13 @@
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
-import { CallToAction } from './CallToAction';
-import { SubscribeAndSocial } from './SubscribeAndSocial';
-
-const FooterRoot = styled.footer``;
+import { CallToAction, SubscribeAndSocial } from '.';
 
 export const Footer = () => {
   const router = useRouter();
 
   return (
-    <FooterRoot>
+    <footer>
       {router.asPath !== '/contact-us' && <CallToAction />}
       <SubscribeAndSocial />
-    </FooterRoot>
+    </footer>
   );
 };

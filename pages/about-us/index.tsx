@@ -1,4 +1,4 @@
-import { Achievement } from '../../components/about/Achievement';
+import { Achievement } from '../../components/about';
 import { PageHeader, Seo, WhyChooseUs } from '../../components/_common';
 import { fadeIn } from '../../lib/animations';
 import strapiService from '../../lib/api/strapiService';
